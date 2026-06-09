@@ -1,0 +1,144 @@
+{%- assign background_image = section.settings.background_image -%}
+{%- assign image = section.settings.image -%}
+
+<section class="section section-hero-testing" id="{{ section.id }}" style="background-color: {{ section.settings.background_color }} ">
+    <div class-"container">
+
+
+        <div class="main-content">
+            <div class="col col-left">
+                <h1>{{ section.settings.title }} </h1>
+                {{ section.settings.description }} 
+                <a href="{{ section.settings.button_url }}">{{ section.settings.button_text }} </a>
+            </div>
+            <div class="col col-right">
+                {{ image | image_url: width: image.width | image_tag: class: 'add_your_class_here', loading: 'lazy' }}
+            </div>
+        </div>
+
+{%- ########################################################################## 
+# Label: Title
+# Returns: a string or an empty object(if nothing has been entered)
+# Filters: https://shopify.dev/api/liquid/objects#string 
+########################################################################## -%}
+
+
+{%- ########################################################################## 
+# Label: Description
+# Returns: a string or an empty object(if nothing has been entered)
+# Filters: https://shopify.dev/api/liquid/objects#string 
+########################################################################## -%}
+
+
+{%- ########################################################################## 
+# Label: Image
+# Returns: an image object or nil(if no selection has been made)
+# Image Properties: https://shopify.dev/api/liquid/objects#image
+# Image Filters: https://shopify.dev/api/liquid/filters#image_tag, https://shopify.dev/api/liquid/filters#image_url
+########################################################################## -%}
+
+
+
+{%- ########################################################################## 
+# Label: Button Text
+# Returns: a string or an empty object(if nothing has been entered)
+# Filters: https://shopify.dev/api/liquid/objects#string 
+########################################################################## -%}
+
+
+{%- ########################################################################## 
+# Label: Button URL
+# Returns: a string(the entered URL) or nil / false(if nothing has been entered)
+########################################################################## -%}
+
+
+    </div>
+</section>
+
+
+{% schema %}
+  {
+  "name": "Hero Testing",
+  "settings": [
+    {
+      "type": "color",
+      "id": "background_color",
+      "label": "Background Color"
+    },
+    {
+      "type": "image_picker",
+      "id": "background_image",
+      "label": "Background Image"
+    },
+    {
+      "type": "text",
+      "id": "title",
+      "label": "Title"
+    },
+    {
+      "type": "richtext",
+      "id": "description",
+      "label": "Description"
+    },
+    {
+      "type": "image_picker",
+      "id": "image",
+      "label": "Image"
+    },
+    {
+      "type": "text",
+      "id": "button_text",
+      "label": "Button Text"
+    },
+    {
+      "type": "url",
+      "id": "button_url",
+      "label": "Button URL"
+    }
+  ],
+  "presets": [
+    {
+      "name": "Hero Testing"
+    }
+  ]
+}  
+{% endschema %}
+
+{% style %}
+    #{{ section.id }} {
+        position: relative;
+        z-index: 1;
+        overflow: hidden;
+    }
+    #{{ section.id }} .background-image {
+        position: absolute;
+        z-index: -1;
+        width: 100%;
+        height: 100%;
+        top: 0;
+        left: 0;
+    }
+    #{{ section.id }} .background-image img {
+        width: 100%;
+        height:100%;
+        object-fit: cover;
+        object-position: center;
+        display: blok;
+    }
+    .main-content {
+        display: flex;
+        flex-flow: row nowrap;
+        gap: 100px;
+    }
+    .main-content .col {
+        width: 100%;
+        max-width: 50%;
+    }
+
+{% endstyle %}
+
+{% stylesheet %}
+{% endstylesheet %}
+
+{% javascript %}
+{% endjavascript %}

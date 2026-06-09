@@ -1,0 +1,86 @@
+<section class="home-hero {{ section.settings.hero_bg }}">
+  <div class="home-hero__inner">
+    <div class="home-hero__content">
+      {% if section.settings.title != blank %}
+        <h1 class="home-hero__title">{{ section.settings.title }}</h1>
+      {% endif %}
+      {% if section.settings.description != blank %}
+        <p class="home-hero__description">{{ section.settings.description }}</p>
+      {% endif %}
+      {% if section.settings.button_text != blank and section.settings.button_link != blank %}
+        <a class="button home-hero__button" href="{{ section.settings.button_link }}">{{ section.settings.button_text }}</a>
+      {% endif %}
+    </div>
+    <div class="home-hero__media">
+      {% if section.settings.image != blank %}
+        {{ section.settings.image | image_url: width: 1400 | image_tag: class: 'home-hero__image', widths: '400, 600, 800, 1000, 1200, 1400', alt: section.settings.image.alt }}
+      {% endif %}
+    </div>
+  </div>
+  <div class="hero-image-wrap">
+    <div class="img-wrapper">
+      <img src="{{ 'banner-plant.png' | asset_url }}" alt="Banner plant" class="hero-image">
+    </div>
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "Home hero",
+  "settings": [
+    {
+      "type": "select",
+      "id": "hero_bg",
+      "label": "Background color",
+      "default": "home-hero--peach",
+      "options": [
+        {
+          "value": "home-hero--peach",
+          "label": "#FFEFED"
+        },
+        {
+          "value": "home-hero--mint",
+          "label": "#DFFFEE"
+        },
+        {
+          "value": "home-hero--mint-light",
+          "label": "#F5FFF7"
+        }
+      ]
+    },
+    {
+      "type": "textarea",
+      "id": "title",
+      "label": "Title",
+      "default": "This is just a placeholder headline, we will replace it once your website copy is finalized."
+    },
+    {
+      "type": "textarea",
+      "id": "description",
+      "label": "Short description",
+      "default": "This is just placeholder text. Don’t be alarmed, this is just here to fill up space since your finalized copy isn’t ready yet."
+    },
+    {
+      "type": "text",
+      "id": "button_text",
+      "label": "Button text",
+      "default": "Read More"
+    },
+    {
+      "type": "url",
+      "id": "button_link",
+      "label": "Button link"
+    },
+    {
+      "type": "image_picker",
+      "id": "image",
+      "label": "Image"
+    }
+  ],
+  "presets": [
+    {
+      "name": "Home hero"
+    }
+  ]
+}
+{% endschema %}

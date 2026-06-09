@@ -1,0 +1,86 @@
+<section class="collection-slider">
+  <div class="collection-slider__inner">
+    <div class="collection-slider__header">
+      {% if section.settings.title != blank %}
+        <h2 class="collection-slider__title">{{ section.settings.title }}</h2>
+      {% endif %}
+      {% if section.settings.description != blank %}
+        <p class="collection-slider__description">{{ section.settings.description }}</p>
+      {% endif %}
+    </div>
+    <div class="collection-slider__track">
+      {% assign slider_collection = collections[section.settings.collection] %}
+      {% if slider_collection != blank %}
+        {% for product in slider_collection.products limit: section.settings.products_limit %}
+          <div class="collection-slider__slide">
+            <a class="collection-slider__card" href="{{ product.url }}">
+              {% if product.featured_image != blank %}
+                <div class="collection-slider__card-image-wrap">        
+                  {{ product.featured_image | image_url: width: 800 | image_tag: class: 'collection-slider__image', widths: '400, 600, 800', alt: product.title }}
+                </div>
+              {% endif %}
+              <div class="collection-slider__body">
+                <h3 class="collection-slider__card-title">{{ product.title }}</h3>
+                {% assign short_text = product.metafields.custom.short_description | default: product.description %}
+                {% if short_text != blank %}
+                  <p class="collection-slider__card-description">{{ short_text | strip_html | truncate: 120 }}</p>
+                {% endif %}
+              </div>
+              {% if section.settings.read_more_text != blank %}
+                <span class="collection-slider__link">
+                  {{ section.settings.read_more_text }}
+                  <span class="collection-slider__arrow" aria-hidden="true">→</span>
+                </span>
+              {% endif %}
+            </a>
+          </div>
+        {% endfor %}
+      {% endif %}
+    </div>
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "Collection slider",
+  "settings": [
+    {
+      "type": "collection",
+      "id": "collection",
+      "label": "Collection"
+    },
+    {
+      "type": "text",
+      "id": "title",
+      "label": "Title",
+      "default": "What We’re Offering"
+    },
+    {
+      "type": "textarea",
+      "id": "description",
+      "label": "Short description",
+      "default": "This is just placeholder text. Don’t be alarmed, this is just here to fill up space since your finalized copy isn’t ready yet."
+    },
+    {
+      "type": "text",
+      "id": "read_more_text",
+      "label": "Read more text",
+      "default": "View Details"
+    },
+    {
+      "type": "range",
+      "id": "products_limit",
+      "label": "Products to show",
+      "min": 4,
+      "max": 12,
+      "step": 1,
+      "default": 8
+    }
+  ],
+  "presets": [
+    {
+      "name": "Collection slider"
+    }
+  ]
+}
+{% endschema %}

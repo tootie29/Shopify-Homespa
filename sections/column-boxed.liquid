@@ -1,0 +1,196 @@
+{{ 'column-boxed.css' | asset_url | stylesheet_tag }}
+
+<section
+  class="column-boxed"
+  {% if section.settings.section_id != blank %}id="{{ section.settings.section_id }}"{% endif %}
+  style="--section-bg: {{ section.settings.background_color }};"
+  data-section-id="{{ section.id }}"
+>
+  {% if section.settings.decorative_image != blank %}
+    <div class="column-boxed__deco" aria-hidden="true">
+      {{ section.settings.decorative_image | image_url: width: 400 | image_tag: class: 'column-boxed__deco-image', widths: '200, 400', loading: 'lazy', alt: '' }}
+    </div>
+  {% endif %}
+  <div class="column-boxed__inner">
+    <div class="column-boxed__header">
+      {% if section.settings.title != blank %}
+        <h2 class="column-boxed__heading">{{ section.settings.title }}</h2>
+      {% endif %}
+      {% if section.settings.description != blank %}
+        <div class="column-boxed__description">
+          {{ section.settings.description }}
+        </div>
+      {% endif %}
+    </div>
+    {% if section.blocks.size > 0 %}
+      <div class="column-boxed__list">
+        {% for block in section.blocks %}
+          <div class="column-boxed__card" {{ block.shopify_attributes }}>
+            <div class="column-boxed__card-main">
+              <div class="column-boxed__card-info">
+                {% if block.settings.sub_title != blank %}
+                  <p class="column-boxed__card-subtitle">{{ block.settings.sub_title }}</p>
+                {% endif %}
+                {% if block.settings.title != blank %}
+                  <h3 class="column-boxed__card-title">{{ block.settings.title }}</h3>
+                {% endif %}
+                <div class="column-boxed__card-meta">
+                  {% if block.settings.position != blank %}<span class="column-boxed__card-meta-item">{{ block.settings.position }}</span>{% endif %}
+                  {% if block.settings.rate != blank %}<span class="column-boxed__card-meta-item">{{ block.settings.rate }}</span>{% endif %}
+                  {% if block.settings.currency != blank %}<span class="column-boxed__card-meta-item">{{ block.settings.currency }}</span>{% endif %}
+                </div>
+              </div>
+              <div class="column-boxed__card-actions">
+                {% if block.settings.more_details != blank %}
+                  <button type="button" class="column-boxed__role-details" data-toggle-id="column-boxed-details-{{ section.id }}-{{ block.id }}" aria-expanded="false" aria-controls="column-boxed-details-{{ section.id }}-{{ block.id }}">
+                    <span class="column-boxed__role-details-text">Role Details</span>
+                    <span class="column-boxed__role-details-icon" aria-hidden="true">
+                      <svg width="35" height="35" viewBox="0 0 35 35" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <circle cx="17.5" cy="17.5" r="17.5" transform="rotate(90 17.5 17.5)" fill="#26744A"/>
+                        <path d="M18.366 24.75C17.9811 25.4167 17.0189 25.4167 16.634 24.75L10.7883 14.625C10.4034 13.9583 10.8845 13.125 11.6543 13.125L23.3457 13.125C24.1155 13.125 24.5966 13.9583 24.2117 14.625L18.366 24.75Z" fill="white"/>
+                      </svg>
+                    </span>
+                  </button>
+                {% endif %}
+                {% if block.settings.button_text != blank and block.settings.button_url != blank %}
+                  <a class="button column-boxed__button" href="{{ block.settings.button_url }}" target="_blank" rel="noopener noreferrer">{{ block.settings.button_text }}</a>
+                {% elsif block.settings.button_text != blank %}
+                  <span class="button column-boxed__button">{{ block.settings.button_text }}</span>
+                {% endif %}
+              </div>
+            </div>
+            {% if block.settings.more_details != blank %}
+              <div class="column-boxed__details-wrap" id="column-boxed-details-{{ section.id }}-{{ block.id }}" aria-hidden="true">
+                <div class="column-boxed__details-inner">
+                  <div class="column-boxed__details-richtext">
+                    {{ block.settings.more_details }}
+                  </div>
+                </div>
+              </div>
+            {% endif %}
+          </div>
+        {% endfor %}
+      </div>
+    {% endif %}
+  </div>
+</section>
+
+<script>
+  (function() {
+    var section = document.querySelector('[data-section-id="{{ section.id }}"]');
+    if (!section) return;
+    var toggles = section.querySelectorAll('.column-boxed__role-details');
+    toggles.forEach(function(btn) {
+      btn.addEventListener('click', function() {
+        var id = btn.getAttribute('data-toggle-id');
+        var panel = id ? document.getElementById(id) : null;
+        if (!panel) return;
+        var isOpen = btn.getAttribute('aria-expanded') === 'true';
+        btn.setAttribute('aria-expanded', !isOpen);
+        panel.setAttribute('aria-hidden', isOpen);
+        panel.classList.toggle('column-boxed__details-wrap--open', !isOpen);
+      });
+    });
+  })();
+</script>
+
+{% schema %}
+{
+  "name": "Column Boxed",
+  "settings": [
+    {
+      "type": "text",
+      "id": "section_id",
+      "label": "Section ID"
+    },
+    {
+      "type": "color",
+      "id": "background_color",
+      "label": "Background color",
+      "default": "#faf9f7"
+    },
+    {
+      "type": "image_picker",
+      "id": "decorative_image",
+      "label": "Decorative image (bottom right)"
+    },
+    {
+      "type": "text",
+      "id": "title",
+      "label": "Title",
+      "default": "Our Open Roles"
+    },
+    {
+      "type": "richtext",
+      "id": "description",
+      "label": "Description"
+    }
+  ],
+  "blocks": [
+    {
+      "type": "role",
+      "name": "Role",
+      "settings": [
+        {
+          "type": "text",
+          "id": "sub_title",
+          "label": "Sub-title",
+          "default": "Open Roles"
+        },
+        {
+          "type": "text",
+          "id": "title",
+          "label": "Title",
+          "default": "This is just placeholder text"
+        },
+        {
+          "type": "text",
+          "id": "position",
+          "label": "Position",
+          "default": "Full time"
+        },
+        {
+          "type": "text",
+          "id": "rate",
+          "label": "Rate",
+          "default": "$300-$800"
+        },
+        {
+          "type": "text",
+          "id": "currency",
+          "label": "Currency",
+          "default": "AUS"
+        },
+        {
+          "type": "richtext",
+          "id": "more_details",
+          "label": "More details (Role Details)"
+        },
+        {
+          "type": "text",
+          "id": "button_text",
+          "label": "Button text",
+          "default": "Submit Application"
+        },
+        {
+          "type": "url",
+          "id": "button_url",
+          "label": "Button URL",
+          "info": "Opens in a new tab."
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Column Boxed",
+      "blocks": [
+        { "type": "role" },
+        { "type": "role" },
+        { "type": "role" },
+        { "type": "role" }
+      ]
+    }
+  ]
+}
+{% endschema %}

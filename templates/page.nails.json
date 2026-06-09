@@ -1,0 +1,129 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "page_hero_BykyFg": {
+      "type": "page-hero",
+      "name": "Page hero",
+      "settings": {
+        "section_id": "",
+        "background_image": "shopify://shop_images/grid_two.jpg",
+        "title": ""
+      }
+    },
+    "menu_eJxTQP": {
+      "type": "menu",
+      "blocks": {
+        "category_QRjgwy": {
+          "type": "category",
+          "settings": {
+            "title": "Nail Care",
+            "subtitle": ""
+          }
+        },
+        "item_3W8Dqc": {
+          "type": "item",
+          "settings": {
+            "title": "Nail Care Rituals",
+            "description": "<p>Essential grooming for clean, polished hands and feet</p><ul><li>Classic Manicure Ritual – ₱250</li><li>Classic Pedicure Ritual – ₱350</li><li>Gel Polish Manicure Ritual – ₱700</li><li>Gel Polish Pedicure Ritual – ₱800</li><li>French Tip Finish <em>(Gel or Regular)</em> – ₱300</li><li>Signature Nail Art (Simple) – ₱500</li></ul>",
+            "pricing_line": "",
+            "duration": "",
+            "price": "",
+            "link": ""
+          }
+        },
+        "item_A99VCn": {
+          "type": "item",
+          "settings": {
+            "title": "Care & Custom Enhancements",
+            "description": "<p><em>Personalize your treatment with targeted add-ons</em></p><ul><li>Foot Renewal Spa – ₱400</li><li>Hand Renewal Spa – ₱300</li><li>Gel Polish Removal (Hands or Feet) – ₱250</li><li>Paraffin Therapy (Hands or Feet) – ₱400</li></ul>",
+            "pricing_line": "",
+            "duration": "",
+            "price": "",
+            "link": ""
+          }
+        }
+      },
+      "block_order": [
+        "category_QRjgwy",
+        "item_3W8Dqc",
+        "item_A99VCn"
+      ],
+      "name": "Menu",
+      "settings": {
+        "section_id": "",
+        "background_color": "#00000000",
+        "accent_color": "#1d5637",
+        "title": "",
+        "intro": "",
+        "divider_color": "#e5e5e5"
+      }
+    },
+    "group_set_wPEtDa": {
+      "type": "group-set",
+      "blocks": {
+        "group_VGqMwE": {
+          "type": "group",
+          "settings": {
+            "title": "1. Clean & Polished Ritual",
+            "tagline": "Simple care for refreshed hands and feet.",
+            "best_for": "Regular maintenance, quick self-care",
+            "services": "<p><strong>Includes:</strong></p><ul><li>Classic Manicure + Classic Pedicure</li><li>Hand Spa + Foot Spa</li></ul><p><strong>Duration:</strong> 90 minutes</p>",
+            "benefit": "",
+            "price": " Suggested Price: ₱850 – ₱1,000",
+            "card_link": ""
+          }
+        },
+        "group_8NgYCq": {
+          "type": "group",
+          "settings": {
+            "title": "2. Glow & Shine Ritual",
+            "tagline": "Long-lasting polish with a touch of care.",
+            "best_for": "Long-lasting nails, polished everyday look",
+            "services": "<p><strong>Includes:</strong></p><ul><li>Gel Polish Manicure + Gel Polish Pedicure</li><li>Hand Spa + Foot Spa</li></ul><p><strong>Duration:</strong> 105 minutes</p>",
+            "benefit": "",
+            "price": " Suggested Price: ₱1,600 – ₱1,800",
+            "card_link": ""
+          }
+        },
+        "group_Q7nFKg": {
+          "type": "group",
+          "settings": {
+            "title": "3. Soft Care Therapy",
+            "tagline": "Deep nourishment and hydration for tired hands and feet.",
+            "best_for": "Dry skin, deep hydration, full relaxation",
+            "services": "<p><strong>Includes:</strong></p><ul><li>Classic Manicure + Classic Pedicure</li><li>Paraffin Therapy (Hands & Feet)</li><li>Hand Spa + Foot Spa</li></ul><p><strong>Duration:</strong> 120 minutes</p>",
+            "benefit": "",
+            "price": " Suggested Price: ₱1,400 – ₱1,600",
+            "card_link": ""
+          }
+        }
+      },
+      "block_order": [
+        "group_VGqMwE",
+        "group_8NgYCq",
+        "group_Q7nFKg"
+      ],
+      "name": "Group Set",
+      "settings": {
+        "section_id": "",
+        "background_color": "#00000000",
+        "card_background_color": "#ffffff",
+        "title": "Nail Care Packages",
+        "intro": ""
+      }
+    }
+  },
+  "order": [
+    "page_hero_BykyFg",
+    "menu_eJxTQP",
+    "group_set_wPEtDa"
+  ]
+}

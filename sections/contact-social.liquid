@@ -1,0 +1,124 @@
+{{ 'contact-social.css' | asset_url | stylesheet_tag }}
+
+{% assign has_links = false %}
+{% if section.settings.messenger_url != blank or section.settings.facebook_url != blank or section.settings.linkedin_url != blank or section.settings.youtube_url != blank or section.settings.instagram_url != blank or section.settings.x_url != blank %}
+  {% assign has_links = true %}
+{% endif %}
+
+{% if has_links %}
+<section
+  class="contact-social"
+  {% if section.settings.section_id != blank %}id="{{ section.settings.section_id }}"{% endif %}
+  style="--section-bg: {{ section.settings.background_color }}; --icon-color: {{ section.settings.icon_color }}; --icon-hover: {{ section.settings.icon_hover_color }};"
+>
+  <div class="contact-social__inner">
+    {% if section.settings.heading != blank %}
+      <h3 class="contact-social__heading">{{ section.settings.heading }}</h3>
+    {% endif %}
+    <div class="contact-social__list">
+      {% if section.settings.messenger_url != blank %}
+        <a class="contact-social__link" href="{{ section.settings.messenger_url }}" target="_blank" rel="noopener noreferrer" aria-label="Messenger">
+          <svg class="contact-social__icon" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2C6.36 2 2 6.13 2 11.7c0 2.91 1.19 5.44 3.14 7.17.16.13.26.35.27.57l.05 1.78c.04.57.61.94 1.13.71l2.98-.87c.17-.06.36-.09.53-.06.9.27 1.9.4 2.9.4 5.64 0 10.36-4.13 10.36-9.7C22 6.13 17.64 2 12 2zm6 7.46l-2.93 4.67c-.47.73-1.47.92-2.17.37L10.56 12.77c-.21-.16-.51-.16-.72 0L6.68 15.17C6.26 15.5 5.71 15 6 14.54L8.93 9.87c.47-.73 1.47-.92 2.17-.37l2.34 1.76c.22.16.51.16.72 0L17.32 8.83c.42-.33.97.17.68.63z"/></svg>
+        </a>
+      {% endif %}
+      {% if section.settings.facebook_url != blank %}
+        <a class="contact-social__link" href="{{ section.settings.facebook_url }}" target="_blank" rel="noopener noreferrer" aria-label="Facebook">
+          <svg class="contact-social__icon" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M13.5 8.2V6.7c0-.8.5-1.2 1.1-1.2h1.6V3.1h-2.2c-2.2 0-3.5 1.4-3.5 3.4v1.7H8.9v2.5h1.6v8.2h3V10.7h2.1l.4-2.5h-2.5z"/></svg>
+        </a>
+      {% endif %}
+      {% if section.settings.linkedin_url != blank %}
+        <a class="contact-social__link" href="{{ section.settings.linkedin_url }}" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">
+          <svg class="contact-social__icon" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M20.45 3H3.55A.55.55 0 0 0 3 3.55v16.9c0 .3.25.55.55.55h16.9c.3 0 .55-.25.55-.55V3.55a.55.55 0 0 0-.55-.55zM8.35 18.56H5.56V9.3h2.8v9.26zM6.95 8.15a1.62 1.62 0 1 1 0-3.24 1.62 1.62 0 0 1 0 3.24zM18.56 18.56h-2.8v-4.4c0-1.05-.02-2.4-1.46-2.4-1.46 0-1.69 1.14-1.69 2.32v4.48h-2.8V9.3h2.69v1.23h.04c.37-.7 1.27-1.44 2.62-1.44 2.8 0 3.32 1.85 3.32 4.25v4.9z"/></svg>
+        </a>
+      {% endif %}
+      {% if section.settings.youtube_url != blank %}
+        <a class="contact-social__link" href="{{ section.settings.youtube_url }}" target="_blank" rel="noopener noreferrer" aria-label="YouTube">
+          <svg class="contact-social__icon" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M23.5 6.5a3 3 0 0 0-2.1-2.1C19.1 4 12 4 12 4s-7.1 0-9.4.4A3 3 0 0 0 .5 6.5 24.4 24.4 0 0 0 0 12a24.4 24.4 0 0 0 .5 5.5 3 3 0 0 0 2.1 2.1C5 20 12 20 12 20s7.1 0 9.4-.4a3 3 0 0 0 2.1-2.1 24.4 24.4 0 0 0 .5-5.5 24.4 24.4 0 0 0-.5-5.5zM9.5 15.5v-7l6.3 3.5-6.3 3.5z"/></svg>
+        </a>
+      {% endif %}
+      {% if section.settings.instagram_url != blank %}
+        <a class="contact-social__link" href="{{ section.settings.instagram_url }}" target="_blank" rel="noopener noreferrer" aria-label="Instagram">
+          <svg class="contact-social__icon" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2.16c3.2 0 3.58 0 4.85.07 3.25.15 4.77 1.69 4.92 4.92.06 1.27.07 1.65.07 4.85s0 3.58-.07 4.85c-.15 3.23-1.66 4.77-4.92 4.92-1.27.06-1.65.07-4.85.07s-3.58 0-4.85-.07c-3.26-.15-4.77-1.7-4.92-4.92C2.22 15.58 2.16 15.2 2.16 12s0-3.58.07-4.85C2.38 4.02 3.9 2.48 7.15 2.33 8.42 2.27 8.8 2.16 12 2.16zM12 0C8.74 0 8.33 0 7.05.07 2.7.27.27 2.69.07 7.05 0 8.33 0 8.74 0 12s0 3.67.07 4.95c.2 4.36 2.62 6.78 6.98 6.98C8.33 24 8.74 24 12 24s3.67 0 4.95-.07c4.36-.2 6.78-2.62 6.98-6.98.06-1.28.07-1.69.07-4.95S24 8.33 23.93 7.05C23.73 2.7 21.31.27 16.95.07 15.67 0 15.26 0 12 0zm0 5.84a6.16 6.16 0 1 0 0 12.32 6.16 6.16 0 0 0 0-12.32zm0 10.16a4 4 0 1 1 0-8 4 4 0 0 1 0 8zm6.41-11.11a1.44 1.44 0 1 0 0 2.88 1.44 1.44 0 0 0 0-2.88z"/></svg>
+        </a>
+      {% endif %}
+      {% if section.settings.x_url != blank %}
+        <a class="contact-social__link" href="{{ section.settings.x_url }}" target="_blank" rel="noopener noreferrer" aria-label="X">
+          <svg class="contact-social__icon" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M18.24 2H5.76L2 5.76v12.48L5.76 22h12.48L22 18.24V5.76L18.24 2zM16.6 16.23h-2.09l-4.83-5.38-4.83 5.38H2.94l5.9-6.61-5.45-6.07h2.09l4.32 4.82 4.32-4.82h2.09l-5.45 6.07 5.9 6.61h-2.09z"/></svg>
+        </a>
+      {% endif %}
+    </div>
+  </div>
+</section>
+{% endif %}
+
+{% schema %}
+{
+  "name": "Contact social links",
+  "settings": [
+    {
+      "type": "text",
+      "id": "section_id",
+      "label": "Section ID"
+    },
+    {
+      "type": "color",
+      "id": "background_color",
+      "label": "Background color",
+      "default": "#ffffff"
+    },
+    {
+      "type": "color",
+      "id": "icon_color",
+      "label": "Icon color",
+      "default": "#222222"
+    },
+    {
+      "type": "color",
+      "id": "icon_hover_color",
+      "label": "Icon hover color",
+      "default": "#1d5637"
+    },
+    {
+      "type": "text",
+      "id": "heading",
+      "label": "Heading",
+      "default": "Follow us"
+    },
+    {
+      "type": "url",
+      "id": "messenger_url",
+      "label": "Messenger URL"
+    },
+    {
+      "type": "url",
+      "id": "facebook_url",
+      "label": "Facebook URL"
+    },
+    {
+      "type": "url",
+      "id": "linkedin_url",
+      "label": "LinkedIn URL"
+    },
+    {
+      "type": "url",
+      "id": "youtube_url",
+      "label": "YouTube URL"
+    },
+    {
+      "type": "url",
+      "id": "instagram_url",
+      "label": "Instagram URL"
+    },
+    {
+      "type": "url",
+      "id": "x_url",
+      "label": "X (Twitter) URL"
+    }
+  ],
+  "presets": [
+    {
+      "name": "Contact social links"
+    }
+  ]
+}
+{% endschema %}

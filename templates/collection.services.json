@@ -1,0 +1,90 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "page_hero_aHgmji": {
+      "type": "page-hero",
+      "name": "Page hero",
+      "settings": {
+        "section_id": "",
+        "background_image": "shopify://shop_images/281c2094f923b24c3c14a1e01985efbc7214c5d0.jpg",
+        "title": ""
+      }
+    },
+    "collection_services_grid_MkYrj8": {
+      "type": "collection-services-grid",
+      "disabled": true,
+      "name": "Collection services grid",
+      "settings": {
+        "section_id": "",
+        "background_color": "#ffffff",
+        "text_color": "#222222",
+        "link_color": "#222222",
+        "link_hover_bg": "#ffffff",
+        "link_hover_text": "#222222",
+        "view_details_text": "VIEW DETAILS",
+        "products_per_page": 9
+      }
+    },
+    "service_grid_kVnWEY": {
+      "type": "service-grid",
+      "blocks": {
+        "page_item_MfVTDB": {
+          "type": "page_item",
+          "settings": {
+            "page": "body",
+            "image": "shopify://shop_images/grid_three.jpg",
+            "title": "Body",
+            "description": "Restore balance, ease tension, and reconnect with your body through our thoughtfully curated massage therapies—designed for total relaxation and healing."
+          }
+        },
+        "page_item_nhnd3F": {
+          "type": "page_item",
+          "settings": {
+            "page": "nails",
+            "image": "shopify://shop_images/grid_two.jpg",
+            "title": "Nails",
+            "description": "Refine, nourish, and care for your hands and feet with our thoughtfully curated nail treatments—designed for beauty, comfort, and everyday confidence."
+          }
+        }
+      },
+      "block_order": [
+        "page_item_MfVTDB",
+        "page_item_nhnd3F"
+      ],
+      "name": "Service grid",
+      "settings": {
+        "section_id": "",
+        "title": "What We’re Offering",
+        "description": "Indulge in thoughtfully curated treatments for body and nail care—designed to restore balance, enhance well-being, and bring effortless relaxation to you.",
+        "read_more_text": "View Details"
+      }
+    },
+    "cta_section_k88RzN": {
+      "type": "cta-section",
+      "name": "CTA Section",
+      "settings": {
+        "section_id": "",
+        "image": "shopify://shop_images/massage.png",
+        "title": "Take a break from the stress and let relaxation come to you.",
+        "description": "With Homespa2Go, premium spa care is always just a booking away—comfortable, convenient, and designed around your lifestyle.\nSchedule your home spa experience today and treat yourself to the care you deserve.",
+        "button_text": "Schedule An Appointment",
+        "button_url": "shopify://pages/contact",
+        "content_bg_color": "#1d5637"
+      }
+    }
+  },
+  "order": [
+    "page_hero_aHgmji",
+    "collection_services_grid_MkYrj8",
+    "service_grid_kVnWEY",
+    "cta_section_k88RzN"
+  ]
+}

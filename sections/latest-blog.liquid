@@ -1,0 +1,110 @@
+{{ 'latest-blog.css' | asset_url | stylesheet_tag }}
+
+<section
+  class="latest-blog"
+  {% if section.settings.section_id != blank %}id="{{ section.settings.section_id }}"{% endif %}
+  style="--section-bg: {{ section.settings.background_color }};"
+>
+  <div class="latest-blog__inner">
+    <div class="latest-blog__header">
+      {% if section.settings.title != blank %}
+        <h2 class="latest-blog__title">{{ section.settings.title }}</h2>
+      {% endif %}
+      {% if section.settings.description != blank %}
+        <div class="latest-blog__description">
+          {{ section.settings.description }}
+        </div>
+      {% endif %}
+    </div>
+
+    <div class="latest-blog__grid">
+      {% assign blog_handle = section.settings.blog %}
+      {% if blog_handle != blank and blogs[blog_handle] != blank %}
+        {% for article in blogs[blog_handle].articles limit: 3 %}
+          <a class="latest-blog__card" href="{{ article.url }}">
+            <div class="latest-blog__image-wrap">
+              {% if article.image != blank %}
+                {{ article.image | image_url: width: 1200 | image_tag: class: 'latest-blog__image', widths: '400, 600, 900, 1200', alt: article.title }}
+              {% else %}
+                {{ 'image' | placeholder_svg_tag: 'placeholder-svg latest-blog__image' }}
+              {% endif %}
+            </div>
+            <h3 class="latest-blog__card-title">{{ article.title }}</h3>
+            <div class="latest-blog__meta">
+              <span>{{ article.published_at | date: "%b %d %Y" }}</span>
+              <span class="latest-blog__divider" aria-hidden="true"></span>
+              <span class="latest-blog__read-more">
+                {{ section.settings.read_more_text }}
+                <span class="latest-blog__read-more-arrow" aria-hidden="true">→</span>
+              </span>
+            </div>
+          </a>
+        {% endfor %}
+      {% else %}
+        {% for i in (1..3) %}
+          <div class="latest-blog__card">
+            <div class="latest-blog__image-wrap">
+              {{ 'image' | placeholder_svg_tag: 'placeholder-svg latest-blog__image' }}
+            </div>
+            <h3 class="latest-blog__card-title">This is just a placeholder headline, we will replace it once your website copy is finalized.</h3>
+            <div class="latest-blog__meta">
+              <span>Nov 10 2025</span>
+              <span class="latest-blog__divider" aria-hidden="true"></span>
+              <span class="latest-blog__read-more">
+                {{ section.settings.read_more_text }}
+                <span class="latest-blog__read-more-arrow" aria-hidden="true">→</span>
+              </span>
+            </div>
+          </div>
+        {% endfor %}
+      {% endif %}
+    </div>
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "Latest Blog Section",
+  "settings": [
+    {
+      "type": "text",
+      "id": "section_id",
+      "label": "Section ID"
+    },
+    {
+      "type": "color",
+      "id": "background_color",
+      "label": "Background color",
+      "default": "#ffffff"
+    },
+    {
+      "type": "text",
+      "id": "title",
+      "label": "Title",
+      "default": "Latest Beauty Article"
+    },
+    {
+      "type": "richtext",
+      "id": "description",
+      "label": "Description",
+      "default": "<p>This is just placeholder text. Don’t be alarmed, this is just here to fill up space since your finalized copy isn’t ready yet.</p>"
+    },
+    {
+      "type": "blog",
+      "id": "blog",
+      "label": "Blog"
+    },
+    {
+      "type": "text",
+      "id": "read_more_text",
+      "label": "Read more text",
+      "default": "Read More"
+    }
+  ],
+  "presets": [
+    {
+      "name": "Latest Blog Section"
+    }
+  ]
+}
+{% endschema %}

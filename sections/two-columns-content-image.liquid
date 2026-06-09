@@ -1,0 +1,87 @@
+{{ 'two-columns-content-image.css' | asset_url | stylesheet_tag }}
+
+<section
+  class="two-columns-content-image two-columns-content-image--image-{{ section.settings.image_position }}"
+  {% if section.settings.section_id != blank %}id="{{ section.settings.section_id }}"{% endif %}
+  style="--section-bg: {{ section.settings.background_color }};"
+>
+  <div class="two-columns-content-image__inner">
+    <div class="two-columns-content-image__media">
+      <div class="two-columns-content-image__media-inner">
+        {% if section.settings.image != blank %}
+          {{ section.settings.image | image_url: width: 1200 | image_tag: class: 'two-columns-content-image__image', widths: '500, 700, 900, 1200', alt: section.settings.image.alt }}
+        {% else %}
+          
+          {{ 'image' | placeholder_svg_tag: 'placeholder-svg two-columns-content-image__image' }}
+        {% endif %}
+      </div>
+    </div>
+    <div class="two-columns-content-image__content">
+      {% if section.settings.title != blank %}
+        <h2 class="two-columns-content-image__title">{{ section.settings.title }}</h2>
+      {% endif %}
+      {% if section.settings.richtext != blank %}
+        <div class="two-columns-content-image__richtext">
+          {{ section.settings.richtext }}
+        </div>
+      {% endif %}
+    </div>
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "Two Columns Content Image",
+  "settings": [
+    {
+      "type": "text",
+      "id": "section_id",
+      "label": "Section ID"
+    },
+    {
+      "type": "color",
+      "id": "background_color",
+      "label": "Background color",
+      "default": "#faf9f7"
+    },
+    {
+      "type": "select",
+      "id": "image_position",
+      "label": "Image position",
+      "default": "left",
+      "options": [
+        {
+          "value": "left",
+          "label": "Left"
+        },
+        {
+          "value": "right",
+          "label": "Right"
+        }
+      ]
+    },
+    {
+      "type": "text",
+      "id": "title",
+      "label": "Title",
+      "default": "This is just a placeholder headline, we will replace it once your website copy is finalized."
+    },
+    {
+      "type": "richtext",
+      "id": "richtext",
+      "label": "Content",
+      "default": "<p>This is just placeholder text. Don't be alarmed, this is just here to fill up space on your website.</p>"
+    },
+    {
+      "type": "image_picker",
+      "id": "image",
+      "label": "Image"
+    }
+  ],
+  "presets": [
+    {
+      "name": "Two Columns Content Image"
+    }
+  ]
+}
+{% endschema %}

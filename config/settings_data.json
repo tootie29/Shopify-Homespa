@@ -1,0 +1,30 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "current": {
+    "header_logo": "shopify://shop_images/homespa_logo.png",
+    "header_menu": "main-menu-1",
+    "header_cta_link": "shopify://pages/contact",
+    "top_bar_bg": "#ffffff",
+    "top_bar_address": "Pasig, Metro Manila",
+    "top_bar_phone": "0931-0682865",
+    "top_bar_email": "info@homespa2go.com",
+    "social_facebook": "https://www.facebook.com/homespa2go",
+    "social_twitter": "",
+    "social_instagram": "https://www.instagram.com/homespa2go_official",
+    "footer_logo": "shopify://shop_images/homespa_logo.png",
+    "footer_services_menu": "services-menu",
+    "footer_quick_links_menu": "main-menu-1",
+    "content_for_index": []
+  },
+  "presets": {
+    "Default": {}
+  }
+}

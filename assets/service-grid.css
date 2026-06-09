@@ -1,0 +1,197 @@
+/* Service grid — isolated selectors (service-grid__*) so it does not share styles with .collection-slider */
+
+.service-grid {
+  padding: 80px 20px;
+  overflow: hidden;
+}
+
+.service-grid__inner {
+  width: 100%;
+  max-width: 1440px;
+  margin: 0 auto;
+}
+
+.service-grid__header {
+  text-align: center;
+  margin: 0 auto 2.5rem;
+  max-width: 60%;
+}
+
+.service-grid__title {
+  font-size: 2.5rem;
+  margin-bottom: 0.6rem;
+  font-family: var(--font-heading);
+  color: var(--heading-color);
+}
+
+.service-grid__description {
+  margin: 0;
+  font-size: 1rem;
+  color: var(--body-color);
+}
+
+.service-grid__grid {
+  width: 100%;
+  max-width: 1200px;
+  margin-left: auto;
+  margin-right: auto;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-content: flex-start;
+  align-items: stretch;
+  gap: 2rem;
+  padding-top: 80px;
+  box-sizing: border-box;
+}
+
+/* Three columns: two gaps between three items (gap is 2rem each) */
+.service-grid__cell {
+  flex: 0 1 calc((100% - 4rem) / 3);
+  max-width: calc((100% - 4rem) / 3);
+  min-width: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.service-grid__card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: #ffffff;
+  border-radius: 0.3rem;
+  box-shadow: 0 1.4rem 2.2rem rgba(0, 0, 0, 0.08);
+  height: 100%;
+  text-decoration: none;
+  color: var(--heading-color);
+  transition: background-color 0.25s ease, color 0.25s ease, box-shadow 0.25s ease;
+}
+
+.service-grid__card-image-wrap {
+  width: 100%;
+  max-width: calc(100% - 80px);
+  margin-top: -80px;
+}
+
+.service-grid__card-image-wrap img,
+.service-grid__image {
+  width: 100%;
+  height: 100%;
+  aspect-ratio: 16 / 9;
+  object-fit: cover;
+  display: block;
+}
+
+.service-grid__image--placeholder {
+  object-fit: contain;
+  background-color: rgba(0, 0, 0, 0.04);
+}
+
+.service-grid__body {
+  padding: 1.6rem 1.5rem 1.2rem;
+  flex: 1 1 auto;
+}
+
+.service-grid__card-title {
+  font-size: 1.2rem;
+  margin-bottom: 0.6rem;
+  text-align: center;
+}
+
+.service-grid__card-description {
+  margin: 0;
+  font-size: 0.95rem;
+  color: var(--body-color);
+  text-align: center;
+}
+
+.service-grid__link {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  padding: 0 1.5rem 1.4rem;
+  font-size: 0.8rem;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: #ceb272;
+}
+
+.service-grid__arrow {
+  font-size: 0.85rem;
+  color: #ceb272;
+}
+
+.service-grid__card:hover {
+  background-color: #1d5637;
+  color: #ffffff;
+  box-shadow: 0 1.8rem 2.4rem rgba(0, 0, 0, 0.15);
+}
+
+.service-grid__card:hover .service-grid__card-title {
+  color: #ffffff;
+}
+
+.service-grid__card:hover .service-grid__card-description {
+  color: #ffffff;
+}
+
+.service-grid__card:hover .service-grid__link,
+.service-grid__card:hover .service-grid__arrow {
+  color: #ceb272;
+}
+
+@media (max-width: 1279px) {
+  .service-grid__inner {
+    width: 92%;
+  }
+
+  .service-grid__header {
+    max-width: 80%;
+  }
+}
+
+@media (max-width: 1023px) {
+  .service-grid__grid {
+    gap: 2.5rem 2rem;
+    padding-top: 70px;
+  }
+
+  /* Two columns: one gap between two items */
+  .service-grid__cell {
+    flex: 0 1 calc((100% - 2rem) / 2);
+    max-width: calc((100% - 2rem) / 2);
+  }
+}
+
+@media (max-width: 767px) {
+  .service-grid {
+    padding: 3rem 0 4rem;
+  }
+
+  .service-grid__inner {
+    width: 94%;
+  }
+
+  .service-grid__header {
+    max-width: 100%;
+  }
+
+  .service-grid__title {
+    font-size: 2rem;
+  }
+
+  .service-grid__grid {
+    gap: 2rem;
+    padding-top: 60px;
+  }
+
+  .service-grid__cell {
+    flex: 0 1 100%;
+    max-width: 100%;
+  }
+
+  .service-grid__image {
+    height: 12rem;
+    object-fit: contain;
+  }
+}

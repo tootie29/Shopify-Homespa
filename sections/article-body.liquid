@@ -1,0 +1,47 @@
+{{ 'article-body.css' | asset_url | stylesheet_tag }}
+
+<section
+  class="article-body"
+  {% if section.settings.section_id != blank %}id="{{ section.settings.section_id }}"{% endif %}
+  style="--section-bg: {{ section.settings.background_color }};"
+>
+  <div class="article-body__inner">
+    {% if article.image != blank %}
+      <div class="article-body__image-wrap">
+        {{ article.image | image_url: width: 1200 | image_tag: class: 'article-body__image', widths: '600, 900, 1200', sizes: '(min-width: 1024px) 1200px, 100vw', loading: 'eager', alt: article.image.alt | default: article.title | escape }}
+      </div>
+    {% endif %}
+    {% if article.title != blank %}
+      <h2 class="article-body__title">{{ article.title }}</h2>
+    {% endif %}
+    {% if article.content != blank %}
+      <div class="article-body__content">
+        {{ article.content }}
+      </div>
+    {% endif %}
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "Article body",
+  "settings": [
+    {
+      "type": "text",
+      "id": "section_id",
+      "label": "Section ID"
+    },
+    {
+      "type": "color",
+      "id": "background_color",
+      "label": "Background color",
+      "default": "#ffffff"
+    }
+  ],
+  "presets": [
+    {
+      "name": "Article body"
+    }
+  ]
+}
+{% endschema %}

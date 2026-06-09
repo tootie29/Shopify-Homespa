@@ -1,0 +1,184 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "main": {
+      "type": "home-hero",
+      "settings": {
+        "hero_bg": "home-hero--peach",
+        "title": "Luxury Relaxation, Delivered to You",
+        "description": "Indulge in premium spa treatments without leaving your home. Affordable, on-demand, and personalized for your ultimate comfort.",
+        "button_text": "Schedule an Appointment",
+        "button_link": "shopify://pages/contact",
+        "image": "shopify://shop_images/Rectangle_5968.jpg"
+      }
+    },
+    "collection_slider_t8kYea": {
+      "type": "collection-slider",
+      "disabled": true,
+      "name": "Collection slider",
+      "settings": {
+        "collection": "classic",
+        "title": "What We’re Offering",
+        "description": "This is just placeholder text. Don’t be alarmed, this is just here to fill up space since your finalized copy isn’t ready yet.",
+        "read_more_text": "View Details",
+        "products_limit": 8
+      }
+    },
+    "service_grid_9VCPFY": {
+      "type": "service-grid",
+      "blocks": {
+        "page_item_gPF6Ki": {
+          "type": "page_item",
+          "settings": {
+            "page": "body",
+            "image": "shopify://shop_images/grid_three.jpg",
+            "title": "",
+            "description": "Restore balance, ease tension, and reconnect with your body through our thoughtfully curated massage therapies—designed for total relaxation and healing."
+          }
+        },
+        "page_item_9pWm8g": {
+          "type": "page_item",
+          "settings": {
+            "page": "nails",
+            "image": "shopify://shop_images/boxed.jpg",
+            "title": "",
+            "description": "Refine, nourish, and care for your hands and feet with our thoughtfully curated nail treatments—designed for beauty, comfort, and everyday confidence."
+          }
+        }
+      },
+      "block_order": [
+        "page_item_gPF6Ki",
+        "page_item_9pWm8g"
+      ],
+      "name": "Service grid",
+      "settings": {
+        "section_id": "",
+        "title": "What We’re Offering",
+        "description": "Indulge in thoughtfully curated treatments for body and nail care—designed to restore balance, enhance well-being, and bring effortless relaxation to you.",
+        "read_more_text": "View Details"
+      }
+    },
+    "image_text_cta_8eFagz": {
+      "type": "image-text-cta",
+      "name": "Image text CTA",
+      "settings": {
+        "section_id": "",
+        "background_color": "#ffffff",
+        "image": "shopify://shop_images/boxed.jpg",
+        "title": "Homespa2Go — Luxury Relaxation, Delivered to You.",
+        "description": "<p>Experience luxury wellness without leaving your home. Homespa2Go delivers premium spa treatments right to your doorstep—combining convenience, expert care, and affordable indulgence. Our professional therapists transform your space into a private sanctuary for relaxation and renewal. Whether it’s a quick escape or full pampering session, your comfort comes first.</p>\n\n<p><b>Relax deeper. Stress less. Stay where you are.<b></b></b></p>",
+        "button_label": "Read More",
+        "button_link": "shopify://pages/about-us"
+      }
+    },
+    "featured_products_F7dicp": {
+      "type": "featured-products",
+      "blocks": {
+        "featured_product_jLEY8K": {
+          "type": "featured_product",
+          "settings": {
+            "image": "shopify://shop_images/isolated-spa-wellness-products-transparent-free-png_1.png",
+            "title": "Products Placeholder Text",
+            "price_text": "$9.00",
+            "link": ""
+          }
+        },
+        "featured_product_8LFYLK": {
+          "type": "featured_product",
+          "settings": {
+            "image": "shopify://shop_images/Group_47551.png",
+            "title": "Products Placeholder Text",
+            "price_text": "$9.00",
+            "link": ""
+          }
+        },
+        "featured_product_izGXRf": {
+          "type": "featured_product",
+          "settings": {
+            "image": "shopify://shop_images/Group_47551.png",
+            "title": "Products Placeholder Text",
+            "price_text": "$9.00",
+            "link": ""
+          }
+        },
+        "featured_product_ExMXRw": {
+          "type": "featured_product",
+          "settings": {
+            "image": "shopify://shop_images/Group_47551.png",
+            "title": "Products Placeholder Text",
+            "price_text": "$9.00",
+            "link": ""
+          }
+        },
+        "featured_product_BdADJ3": {
+          "type": "featured_product",
+          "settings": {
+            "image": "shopify://shop_images/Group_47551.png",
+            "title": "Products Placeholder Text",
+            "price_text": "$9.00",
+            "link": ""
+          }
+        }
+      },
+      "block_order": [
+        "featured_product_jLEY8K",
+        "featured_product_8LFYLK",
+        "featured_product_izGXRf",
+        "featured_product_ExMXRw",
+        "featured_product_BdADJ3"
+      ],
+      "disabled": true,
+      "name": "Featured Products",
+      "settings": {
+        "section_id": "",
+        "background_color": "#fffbfb",
+        "title": "Our Featured Products",
+        "description": "<p>This is just placeholder text. Don’t be alarmed, this is just here to fill up space since your finalized copy isn’t ready yet.</p>",
+        "button_text": "See More",
+        "button_url": ""
+      }
+    },
+    "latest_blog_rf4ibY": {
+      "type": "latest-blog",
+      "name": "Latest Blog Section",
+      "settings": {
+        "section_id": "",
+        "background_color": "#ffffff",
+        "title": "Latest Beauty Article",
+        "description": "<p>Because self-care isn’t a luxury—it’s a lifestyle.</p>",
+        "blog": "news",
+        "read_more_text": "Read More"
+      }
+    },
+    "cta_section_4RgCX8": {
+      "type": "cta-section",
+      "name": "CTA Section",
+      "settings": {
+        "section_id": "",
+        "image": "shopify://shop_images/focused-back-massage.png",
+        "title": "You deserve to relax. Let Homespa2Go bring luxury spa treatments straight to your home so you can unwind without leaving your space.",
+        "description": "Ready to turn your home into a private spa experience? Book your Homespa2Go session today and enjoy luxury treatments delivered right to your doorstep—anytime you need to relax, reset, or recharge.\nBook now and experience true comfort at home.",
+        "button_text": "Schedule An Appointment",
+        "button_url": "shopify://pages/contact",
+        "content_bg_color": "#1d5637"
+      }
+    }
+  },
+  "order": [
+    "main",
+    "collection_slider_t8kYea",
+    "service_grid_9VCPFY",
+    "image_text_cta_8eFagz",
+    "featured_products_F7dicp",
+    "latest_blog_rf4ibY",
+    "cta_section_4RgCX8"
+  ]
+}

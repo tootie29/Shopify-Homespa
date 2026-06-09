@@ -1,0 +1,187 @@
+.product-faq {
+  background-color: var(--section-bg, #FFFBFB);
+  padding: 80px 13%;
+}
+
+.product-faq__inner {
+  width: 100%;
+  max-width: 960px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+.product-faq__heading {
+  margin: 0 0 2rem;
+  font-family: var(--font-heading);
+  font-size: 2.25rem;
+  color: var(--heading-color);
+  line-height: 1.3;
+}
+
+.product-faq__accordion {
+  width: 100%;
+  text-align: left;
+}
+
+/* Accordion-js overrides to match design: light grey bar, right arrow */
+.product-faq .ac {
+  margin-bottom: 0.5rem;
+  border: 0;
+  border-radius: 4px;
+  background-color: #fff;
+  overflow: hidden;
+  box-shadow: 0 1.2rem 2.2rem rgba(0, 0, 0, 0.12);
+}
+
+.product-faq .ac-trigger {
+  margin: 0;
+  padding: 24px 32px;
+  font-family: var(--font-body);
+  font-size: 1.125rem;
+  font-weight: 600;
+  color: var(--heading-color);
+  background: none;
+  border: none;
+  width: 100%;
+  text-align: left;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  transition: background-color 0.2s ease;
+  font-family: var(--font-heading);
+}
+
+.product-faq .ac .ac-trigger:after {
+  display: none;
+}
+
+.product-faq .ac-trigger:hover {
+  background-color: #fff;
+}
+
+.product-faq__trigger-text {
+  flex: 1;
+  min-width: 0;
+}
+
+.product-faq__trigger-icon {
+  flex-shrink: 0;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  color: #222222;
+  transition: transform 0.3s ease;
+}
+
+.product-faq__trigger-icon svg {
+  width: 13px;
+  height: 14px;
+  display: block;
+}
+
+.product-faq .ac.is-active .product-faq__trigger-icon {
+  transform: rotate(90deg);
+}
+
+.product-faq .ac-panel {
+  overflow: hidden;
+}
+
+.product-faq .ac .ac-panel .ac-text {
+  padding: 0 32px 24px;
+  font-size: 1rem;
+  line-height: 1.6;
+  color: var(--body-color);
+  text-align: left;
+  font-family: var(--font-body);
+}
+
+.product-faq__trigger {
+  font-family: var(--font-body);
+}
+
+.product-faq__panel {
+  font-size: 1rem;
+  line-height: 1.6;
+  color: var(--body-color);
+  text-align: left;
+}
+
+.product-faq__panel p {
+  margin: 0 0 0.5rem;
+}
+
+.product-faq__panel p:last-child {
+  margin-bottom: 0;
+}
+
+.product-faq__panel a,
+.product-faq__panel strong,
+.product-faq__panel b,
+.product-faq__panel u,
+.product-faq__panel ul,
+.product-faq__panel ol,
+.product-faq__panel li {
+  color: inherit;
+  font-weight: inherit;
+  text-decoration: inherit;
+}
+
+.product-faq__empty {
+  margin: 0;
+  padding: 1.5rem;
+  text-align: center;
+  color: var(--body-color);
+  font-size: 0.95rem;
+  background-color: rgba(0, 0, 0, 0.04);
+  border-radius: 4px;
+}
+
+@media (max-width: 1279px) {
+  .product-faq {
+    padding: 80px 40px;
+  }
+}
+
+@media (max-width: 1023px) {
+  .product-faq {
+    padding: 60px 20px;
+  }
+
+  .product-faq__heading {
+    font-size: 2rem;
+  }
+}
+
+@media (max-width: 767px) {
+  .product-faq {
+    padding: 3.5rem 6%;
+  }
+
+  .product-faq__heading {
+    font-size: 1.75rem;
+    margin-bottom: 1.5rem;
+  }
+
+  .product-faq .ac-trigger {
+    padding: 20px 24px;
+    font-size: 0.95rem;
+  }
+
+  .product-faq .ac .ac-panel .ac-text {
+    padding: 0 20px 24px;
+  }
+
+  .product-faq .ac-text {
+    padding: 0 20px 24px;
+  }
+
+  .product-faq__panel {
+    font-size: 1rem;
+  }
+}

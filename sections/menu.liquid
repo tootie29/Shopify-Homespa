@@ -1,0 +1,246 @@
+{{ 'menu.css' | asset_url | stylesheet_tag }}
+
+<section
+  class="section-menu"
+  {% if section.settings.section_id != blank %}id="{{ section.settings.section_id }}"{% endif %}
+  style="--section-menu-bg: {{ section.settings.background_color }}; --section-menu-accent: {{ section.settings.accent_color }}; --section-menu-item-border: {{ section.settings.divider_color }};"
+>
+  <div class="section-menu__inner">
+    {% if section.settings.title != blank or section.settings.intro != blank %}
+      <header class="section-menu__header">
+        {% if section.settings.title != blank %}
+          <h2 class="section-menu__heading">{{ section.settings.title }}</h2>
+        {% endif %}
+        {% if section.settings.intro != blank %}
+          <div class="section-menu__intro rte">
+            {{ section.settings.intro }}
+          </div>
+        {% endif %}
+      </header>
+    {% endif %}
+
+    {% if section.blocks.size > 0 %}
+      <div class="section-menu__groups">
+        {% assign group_open = false %}
+        {% for block in section.blocks %}
+          {% if block.type == 'category' %}
+            {% if group_open %}
+              </div>
+              </div>
+            {% endif %}
+            <div class="section-menu__group" {{ block.shopify_attributes }}>
+              {% if block.settings.title != blank %}
+                <h3 class="section-menu__category-title">{{ block.settings.title }}</h3>
+              {% endif %}
+              {% if block.settings.subtitle != blank %}
+                <p class="section-menu__category-subtitle">{{ block.settings.subtitle }}</p>
+              {% endif %}
+              <div class="section-menu__items">
+            {% assign group_open = true %}
+
+          {% elsif block.type == 'item' %}
+            {% unless group_open %}
+              <div class="section-menu__group section-menu__group--items-only">
+                <div class="section-menu__items">
+              {% assign group_open = true %}
+            {% endunless %}
+
+            {% if block.settings.link != blank %}
+              <a class="section-menu__item section-menu__item--link" href="{{ block.settings.link }}" {{ block.shopify_attributes }}>
+            {% else %}
+              <div class="section-menu__item" {{ block.shopify_attributes }}>
+            {% endif %}
+              <div class="section-menu__item-row">
+                <div class="section-menu__item-body">
+                  {% if block.settings.title != blank %}
+                    <h4 class="section-menu__item-title">{{ block.settings.title }}</h4>
+                  {% endif %}
+                </div>
+                {% assign pricing_text = block.settings.pricing_line %}
+                {% if pricing_text == blank %}
+                  {% if block.settings.duration != blank or block.settings.price != blank %}
+                    {% capture pricing_text %}{% if block.settings.duration != blank %}{{ block.settings.duration }}{% endif %}{% if block.settings.duration != blank and block.settings.price != blank %} · {% endif %}{% if block.settings.price != blank %}{{ block.settings.price }}{% endif %}{% endcapture %}
+                  {% endif %}
+                {% endif %}
+                {% if pricing_text != blank %}
+                  <p class="section-menu__item-pricing">{{ pricing_text | strip }}</p>
+                {% endif %}
+              </div>
+              {% if block.settings.description != blank %}
+                <div class="section-menu__item-description rte">
+                  {{ block.settings.description }}
+                </div>
+              {% endif %}
+            {% if block.settings.link != blank %}
+              </a>
+            {% else %}
+              </div>
+            {% endif %}
+
+          {% endif %}
+        {% endfor %}
+        {% if group_open %}
+          </div>
+          </div>
+        {% endif %}
+      </div>
+    {% endif %}
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "Menu",
+  "settings": [
+    {
+      "type": "text",
+      "id": "section_id",
+      "label": "Section ID"
+    },
+    {
+      "type": "color",
+      "id": "background_color",
+      "label": "Background color",
+      "default": "#00000000"
+    },
+    {
+      "type": "color",
+      "id": "accent_color",
+      "label": "Service title accent (green)",
+      "default": "#1d5637"
+    },
+    {
+      "type": "text",
+      "id": "title",
+      "label": "Heading (optional)"
+    },
+    {
+      "type": "richtext",
+      "id": "intro",
+      "label": "Intro text"
+    },
+    {
+      "type": "color",
+      "id": "divider_color",
+      "label": "Border between items",
+      "default": "#e5e5e5"
+    }
+  ],
+  "blocks": [
+    {
+      "type": "category",
+      "name": "Category",
+      "settings": [
+        {
+          "type": "text",
+          "id": "title",
+          "label": "Category title",
+          "default": "Classic"
+        },
+        {
+          "type": "text",
+          "id": "subtitle",
+          "label": "Category subtitle",
+          "info": "Optional short line under the title"
+        }
+      ]
+    },
+    {
+      "type": "item",
+      "name": "Menu item",
+      "settings": [
+        {
+          "type": "text",
+          "id": "title",
+          "label": "Service name",
+          "default": "Swedish massage"
+        },
+        {
+          "type": "richtext",
+          "id": "description",
+          "label": "Description"
+        },
+        {
+          "type": "textarea",
+          "id": "pricing_line",
+          "label": "Pricing line",
+          "default": "60 Min - Php 450 / 90 Min - Php 600 / 120 Min - Php 800",
+          "info": "Right column (e.g. tiered pricing). If empty, duration + price are used."
+        },
+        {
+          "type": "text",
+          "id": "duration",
+          "label": "Duration (fallback)",
+          "placeholder": "e.g. 60 min"
+        },
+        {
+          "type": "text",
+          "id": "price",
+          "label": "Price (fallback)",
+          "placeholder": "e.g. $120"
+        },
+        {
+          "type": "url",
+          "id": "link",
+          "label": "Link (optional)",
+          "info": "Makes the whole row clickable"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Menu",
+      "blocks": [
+        {
+          "type": "category",
+          "settings": {
+            "title": "Classic",
+            "subtitle": ""
+          }
+        },
+        {
+          "type": "item",
+          "settings": {
+            "title": "Gentle waves of calm",
+            "description": "<p>A soothing massage using long, flowing strokes to ease tension, improve circulation, and leave you feeling completely relaxed. Perfect for first-time spa-goers or anyone seeking gentle relief.</p>",
+            "pricing_line": "60 Min - Php 450 / 90 Min - Php 600 / 120 Min - Php 800"
+          }
+        },
+        {
+          "type": "item",
+          "settings": {
+            "title": "Ancient Filipino healing at your doorstep",
+            "description": "<p>Experience traditional Hilot massage, designed to restore balance and relieve muscle tension using techniques passed down through generations.</p>",
+            "pricing_line": "60 Min - Php 450 / 90 Min - Php 600 / 120 Min - Php 800"
+          }
+        },
+        {
+          "type": "item",
+          "settings": {
+            "title": "Pressure meets precision",
+            "description": "<p>A Japanese therapy using targeted pressure points to reduce stress, boost energy, and promote overall wellness. Perfect for restoring balance and easing muscular tension.</p>",
+            "pricing_line": "60 Min - Php 450 / 90 Min - Php 600 / 120 Min - Php 800"
+          }
+        },
+        {
+          "type": "item",
+          "settings": {
+            "title": "Stretch, release, and energize",
+            "description": "<p>Combining gentle stretching and acupressure, this massage improves flexibility, releases tension, and revitalizes the body. Ideal for anyone seeking both relaxation and invigoration.</p>",
+            "pricing_line": "60 Min - Php 450 / 90 Min - Php 600 / 120 Min - Php 800"
+          }
+        },
+        {
+          "type": "item",
+          "settings": {
+            "title": "A massage as unique as you are",
+            "description": "<p>We blend multiple techniques to match your specific needs—relaxation, recovery, or therapeutic relief—so you leave feeling perfectly balanced.</p>",
+            "pricing_line": "60 Min - Php 450 / 90 Min - Php 600 / 120 Min - Php 800"
+          }
+        }
+      ]
+    }
+  ]
+}
+{% endschema %}

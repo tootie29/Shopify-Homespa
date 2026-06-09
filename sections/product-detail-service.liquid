@@ -1,0 +1,186 @@
+{{ 'product-detail-service.css' | asset_url | stylesheet_tag }}
+
+<section
+  class="product-detail-service"
+  {% if section.settings.section_id != blank %}id="{{ section.settings.section_id }}"{% endif %}
+  style="--section-bg: {{ section.settings.background_color }};"
+>
+  {% if section.settings.decorative_image != blank %}
+    <div class="product-detail-service__deco" aria-hidden="true">
+      {{ section.settings.decorative_image | image_url: width: 400 | image_tag: class: 'product-detail-service__deco-image', widths: '200, 400', loading: 'lazy', alt: '' }}
+    </div>
+  {% endif %}
+  <div class="product-detail-service__inner">
+    <div class="product-detail-service__media">
+      <div class="product-detail-service__main-wrap">
+        {% assign featured_image = product.featured_image | default: product.images.first %}
+        {% if featured_image != blank %}
+          <img
+            class="product-detail-service__main-image"
+            src="{{ featured_image | image_url: width: 1200 }}"
+            srcset="{{ featured_image | image_url: width: 600 }} 600w,
+                    {{ featured_image | image_url: width: 900 }} 900w,
+                    {{ featured_image | image_url: width: 1200 }} 1200w"
+            sizes="(min-width: 1024px) 50vw, (min-width: 768px) 50vw, 100vw"
+            alt="{{ featured_image.alt | default: product.title | escape }}"
+            width="{{ featured_image.width }}"
+            height="{{ featured_image.height }}"
+            loading="eager"
+            id="ProductDetailMainImage"
+          >
+        {% else %}
+          {{ 'image' | placeholder_svg_tag: 'product-detail-service__main-image product-detail-service__placeholder' }}
+        {% endif %}
+      </div>
+      {% if product.images.size > 1 %}
+        <div class="product-detail-service__thumbs">
+          {% for image in product.images %}
+            <button
+              type="button"
+              class="product-detail-service__thumb{% if image == featured_image %} product-detail-service__thumb--active{% endif %}"
+              data-src="{{ image | image_url: width: 1200 }}"
+              data-srcset="{{ image | image_url: width: 600 }} 600w, {{ image | image_url: width: 900 }} 900w, {{ image | image_url: width: 1200 }} 1200w"
+              data-alt="{{ image.alt | default: product.title | escape }}"
+              aria-label="{{ 'products.product.thumbnail' | t: number: forloop.index }}"
+            >
+              {{ image | image_url: width: 200 | image_tag: class: 'product-detail-service__thumb-image', widths: '100, 200', loading: 'lazy', alt: image.alt | default: product.title | escape }}
+            </button>
+          {% endfor %}
+        </div>
+      {% endif %}
+    </div>
+    <div class="product-detail-service__content">
+      {% if product.title != blank %}
+        <h2 class="product-detail-service__title">{{ product.title }}</h2>
+      {% endif %}
+      {% if product.description != blank %}
+        <div class="product-detail-service__description">
+          {{ product.description }}
+        </div>
+      {% endif %}
+      {% if product.variants.size > 0 %}
+        <div class="product-detail-service__variants-wrap">
+          <h3 class="product-detail-service__variants-heading">Options &amp; pricing</h3>
+          <ul class="product-detail-service__variants">
+            {% for variant in product.variants %}
+              <li class="product-detail-service__variant">
+                <span class="product-detail-service__variant-label">
+                  {% if variant.title == 'Default Title' %}
+                    Standard
+                  {% else %}
+                    {{ variant.title }}
+                  {% endif %}
+                </span>
+                <span class="product-detail-service__variant-price">{{ variant.price | money }}</span>
+              </li>
+            {% endfor %}
+          </ul>
+        </div>
+      {% endif %}
+      {% if section.blocks.size > 0 %}
+        <ul class="product-detail-service__features">
+          {% for block in section.blocks %}
+            {% if block.type == 'feature' and block.settings.text != blank %}
+              <li class="product-detail-service__feature" {{ block.shopify_attributes }}>
+                <span class="product-detail-service__feature-icon" aria-hidden="true">
+                  <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <circle cx="12" cy="12" r="10" fill="currentColor"/>
+                    <path d="M10 8l5 4-5 4V8z" fill="#fff"/>
+                  </svg>
+                </span>
+                <span class="product-detail-service__feature-text">{{ block.settings.text }}</span>
+              </li>
+            {% endif %}
+          {% endfor %}
+        </ul>
+      {% endif %}
+      {% if section.settings.button_text != blank %}
+        {% if section.settings.button_url != blank %}
+          <a class="button product-detail-service__button" href="{{ section.settings.button_url }}">
+            {{ section.settings.button_text }}
+          </a>
+        {% else %}
+          <span class="button product-detail-service__button">{{ section.settings.button_text }}</span>
+        {% endif %}
+      {% endif %}
+    </div>
+  </div>
+</section>
+
+<script>
+  (function() {
+    var main = document.getElementById('ProductDetailMainImage');
+    var thumbs = document.querySelectorAll('.product-detail-service__thumb');
+    if (!main || thumbs.length === 0) return;
+    thumbs.forEach(function(btn) {
+      btn.addEventListener('click', function() {
+        var src = btn.getAttribute('data-src');
+        var srcset = btn.getAttribute('data-srcset');
+        var alt = btn.getAttribute('data-alt');
+        if (src) main.src = src;
+        if (srcset) main.srcset = srcset;
+        if (alt) main.alt = alt;
+        thumbs.forEach(function(t) { t.classList.remove('product-detail-service__thumb--active'); });
+        btn.classList.add('product-detail-service__thumb--active');
+      });
+    });
+  })();
+</script>
+
+{% schema %}
+{
+  "name": "Product detail (service)",
+  "settings": [
+    {
+      "type": "text",
+      "id": "section_id",
+      "label": "Section ID"
+    },
+    {
+      "type": "color",
+      "id": "background_color",
+      "label": "Background color",
+      "default": "#ffffff"
+    },
+    {
+      "type": "image_picker",
+      "id": "decorative_image",
+      "label": "Decorative image (left edge)"
+    },
+    {
+      "type": "text",
+      "id": "button_text",
+      "label": "Button text",
+      "default": "Schedule An Appointment"
+    },
+    {
+      "type": "url",
+      "id": "button_url",
+      "label": "Button URL"
+    }
+  ],
+  "blocks": [
+    {
+      "type": "feature",
+      "name": "Feature item",
+      "settings": [
+        {
+          "type": "textarea",
+          "id": "text",
+          "label": "Text"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Product detail (service)",
+      "blocks": [
+        { "type": "feature", "settings": { "text": "This is just placeholder text. Don't be alarmed, this is just here to fill up space since your finalized copy isn't ready yet." } },
+        { "type": "feature", "settings": { "text": "This is just placeholder text. Don't be alarmed, this is just here to fill up space since your finalized copy isn't ready yet." } },
+        { "type": "feature", "settings": { "text": "This is just placeholder text. Don't be alarmed, this is just here to fill up space since your finalized copy isn't ready yet." } }
+      ]
+    }
+  ]
+}
+{% endschema %}

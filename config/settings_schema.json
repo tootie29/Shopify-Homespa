@@ -1,0 +1,262 @@
+[
+  {
+    "name": "theme_info",
+    "theme_name": "Themekit template theme",
+    "theme_version": "1.0.0",
+    "theme_author": "Shopify",
+    "theme_documentation_url": "https://github.com/Shopify/themekit",
+    "theme_support_url": "https://github.com/Shopify/themekit/issues"
+  },
+  {
+    "name": "general",
+    "settings": [
+      {
+        "type": "header",
+        "content": "Typography"
+      },
+      {
+        "type": "paragraph",
+        "content": "Headings use Playfair Display. Body uses Open Sans."
+      },
+      {
+        "type": "header",
+        "content": "Colors"
+      },
+      {
+        "type": "color",
+        "id": "heading_color",
+        "label": "Heading color",
+        "default": "#222222"
+      },
+      {
+        "type": "color",
+        "id": "body_color",
+        "label": "Body color",
+        "default": "#555555"
+      }
+    ]
+  },
+  {
+    "name": "header",
+    "settings": [
+      {
+        "type": "header",
+        "content": "Logo"
+      },
+      {
+        "type": "image_picker",
+        "id": "header_logo",
+        "label": "Logo image"
+      },
+      {
+        "type": "header",
+        "content": "Menu"
+      },
+      {
+        "type": "link_list",
+        "id": "header_menu",
+        "label": "Header menu"
+      },
+      {
+        "type": "text",
+        "id": "header_cta_text",
+        "label": "Header CTA text",
+        "default": "Schedule An Appointment"
+      },
+      {
+        "type": "url",
+        "id": "header_cta_link",
+        "label": "Header CTA link"
+      },
+      {
+        "type": "header",
+        "content": "Background"
+      },
+      {
+        "type": "select",
+        "id": "header_bg",
+        "label": "Header background color",
+        "default": "bg-peach",
+        "options": [
+          {
+            "value": "bg-peach",
+            "label": "#FFEFED"
+          },
+          {
+            "value": "bg-mint",
+            "label": "#DFFFEE"
+          },
+          {
+            "value": "bg-mint-light",
+            "label": "#F5FFF7"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "name": "top_bar",
+    "settings": [
+      {
+        "type": "header",
+        "content": "Content"
+      },
+      {
+        "type": "header",
+        "content": "Colors"
+      },
+      {
+        "type": "color",
+        "id": "top_bar_bg",
+        "label": "Top bar background color",
+        "default": "#fff7f6"
+      },
+      {
+        "type": "color",
+        "id": "top_bar_text",
+        "label": "Top bar text color",
+        "default": "#555555"
+      },
+      {
+        "type": "color",
+        "id": "top_bar_icon",
+        "label": "Top bar icon color",
+        "default": "#CEB272"
+      },
+      {
+        "type": "header",
+        "content": "Text"
+      },
+      {
+        "type": "text",
+        "id": "top_bar_address",
+        "label": "Address",
+        "default": "000 Street Name Ave, City Name, 000 State Name"
+      },
+      {
+        "type": "text",
+        "id": "top_bar_phone",
+        "label": "Phone number",
+        "default": "+0 000 0000 000"
+      },
+      {
+        "type": "text",
+        "id": "top_bar_email",
+        "label": "Email address",
+        "default": "info@email.com"
+      },
+      {
+        "type": "header",
+        "content": "Social media"
+      },
+      {
+        "type": "url",
+        "id": "social_facebook",
+        "label": "Facebook URL"
+      },
+      {
+        "type": "url",
+        "id": "social_twitter",
+        "label": "Twitter/X URL"
+      },
+      {
+        "type": "url",
+        "id": "social_instagram",
+        "label": "Instagram URL"
+      }
+    ]
+  },
+  {
+    "name": "footer",
+    "settings": [
+      {
+        "type": "header",
+        "content": "Branding"
+      },
+      {
+        "type": "header",
+        "content": "Colors"
+      },
+      {
+        "type": "color",
+        "id": "footer_bg",
+        "label": "Footer background color",
+        "default": "#FFEFED"
+      },
+      {
+        "type": "color",
+        "id": "footer_copyright_bg",
+        "label": "Copyright background color",
+        "default": "#FFFFFF"
+      },
+      {
+        "type": "image_picker",
+        "id": "footer_logo",
+        "label": "Footer logo"
+      },
+      {
+        "type": "textarea",
+        "id": "footer_description",
+        "label": "Footer description",
+        "default": "This is just placeholder text. Don’t be alarmed, this is just here to fill up space since your finalized copy isn’t ready yet."
+      },
+      {
+        "type": "header",
+        "content": "Menus"
+      },
+      {
+        "type": "link_list",
+        "id": "footer_services_menu",
+        "label": "Services menu"
+      },
+      {
+        "type": "link_list",
+        "id": "footer_quick_links_menu",
+        "label": "Quick links menu"
+      },
+      {
+        "type": "header",
+        "content": "Subscription"
+      },
+      {
+        "type": "text",
+        "id": "footer_subscribe_heading",
+        "label": "Subscription heading",
+        "default": "Stay up to date"
+      },
+      {
+        "type": "textarea",
+        "id": "footer_subscribe_description",
+        "label": "Subscription description",
+        "default": "This is just placeholder text. Don’t be alarmed, this is just here to fill up space since your finalized copy isn’t ready yet."
+      },
+      {
+        "type": "url",
+        "id": "footer_subscribe_action",
+        "label": "Subscription form action URL"
+      },
+      {
+        "type": "text",
+        "id": "footer_subscribe_placeholder",
+        "label": "Email placeholder",
+        "default": "EMAIL ADDRESS"
+      },
+      {
+        "type": "text",
+        "id": "footer_subscribe_button",
+        "label": "Button text",
+        "default": "Subscribe"
+      },
+      {
+        "type": "header",
+        "content": "Copyright"
+      },
+      {
+        "type": "text",
+        "id": "footer_copyright",
+        "label": "Copyright text",
+        "default": "© 2022 Home Spa 2go. All rights reserved."
+      }
+    ]
+  }
+]

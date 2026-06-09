@@ -1,0 +1,85 @@
+{{ 'cta-section.css' | asset_url | stylesheet_tag }}
+
+<section
+  class="cta-section"
+  {% if section.settings.section_id != blank %}id="{{ section.settings.section_id }}"{% endif %}
+>
+  <div class="cta-section__inner">
+    <div class="cta-section__media">
+      {% if section.settings.image != blank %}
+        {{ section.settings.image | image_url: width: 1600 | image_tag: class: 'cta-section__image', widths: '600, 900, 1200, 1600', alt: section.settings.image.alt }}
+      {% else %}
+        {{ 'image' | placeholder_svg_tag: 'placeholder-svg cta-section__image' }}
+      {% endif %}
+    </div>
+    <div class="cta-section__content" style="--content-bg: {{ section.settings.content_bg_color }};">
+      {% if section.settings.title != blank %}
+        <h2 class="cta-section__title">{{ section.settings.title }}</h2>
+      {% endif %}
+      {% if section.settings.description != blank %}
+        <p class="cta-section__description">{{ section.settings.description }}</p>
+      {% endif %}
+      {% if section.settings.button_text != blank %}
+        {% if section.settings.button_url != blank %}
+          <a class="button cta-section__button" href="{{ section.settings.button_url }}">
+            {{ section.settings.button_text }}
+          </a>
+        {% else %}
+          <span class="button cta-section__button">{{ section.settings.button_text }}</span>
+        {% endif %}
+      {% endif %}
+    </div>
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "CTA Section",
+  "settings": [
+    {
+      "type": "text",
+      "id": "section_id",
+      "label": "Section ID"
+    },
+    {
+      "type": "image_picker",
+      "id": "image",
+      "label": "Image"
+    },
+    {
+      "type": "text",
+      "id": "title",
+      "label": "Title",
+      "default": "This is just a placeholder headline, we will replace it once your website copy is finalized."
+    },
+    {
+      "type": "textarea",
+      "id": "description",
+      "label": "Description",
+      "default": "Sometimes it’s nice to put in text just to get an idea of how text will fill in a space on your website."
+    },
+    {
+      "type": "text",
+      "id": "button_text",
+      "label": "Button text",
+      "default": "Schedule An Appointment"
+    },
+    {
+      "type": "url",
+      "id": "button_url",
+      "label": "Button URL"
+    },
+    {
+      "type": "color",
+      "id": "content_bg_color",
+      "label": "Content background color",
+      "default": "#1d5637"
+    }
+  ],
+  "presets": [
+    {
+      "name": "CTA Section"
+    }
+  ]
+}
+{% endschema %}

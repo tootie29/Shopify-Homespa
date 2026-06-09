@@ -1,0 +1,155 @@
+.two-columns-content-image {
+  background-color: var(--section-bg);
+  padding: 80px 13%;
+}
+
+.two-columns-content-image__inner {
+  width: 100%;
+  margin: 0 auto;
+  display: flex;
+  align-items: stretch;
+  gap: 100px;
+}
+
+.two-columns-content-image--image-right .two-columns-content-image__inner {
+  flex-direction: row-reverse;
+}
+
+
+.two-columns-content-image__media {
+  width: 100%;
+  max-width: calc(50% - (100px * 1 / 2));
+  position: relative;
+}
+
+.two-columns-content-image__media .two-columns-content-image__media-inner {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  border-radius: 4px;
+}
+
+.two-columns-content-image__image {
+  width: 100%;
+  height: 100%;
+  display: block;
+  -o-object-fit: cover;
+  object-fit: cover;
+  -o-object-position: center;
+  object-position: center;
+}
+
+.two-columns-content-image__content {
+  width: 100%;
+  max-width: calc(50% - (100px * 1 / 2));
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.two-columns-content-image__title {
+  margin: 0;
+  font-family: var(--font-heading);
+  font-size: 2.25rem;
+  color: var(--heading-color);
+}
+
+.two-columns-content-image__richtext {
+  font-size: var(--font-size-body);
+  line-height: 1.6;
+  color: var(--body-color);
+}
+
+.two-columns-content-image__richtext p {
+  margin: 0 0 1rem;
+}
+
+.two-columns-content-image__richtext p:last-child {
+  margin-bottom: 0;
+}
+
+.two-columns-content-image__richtext a,
+.two-columns-content-image__richtext strong,
+.two-columns-content-image__richtext b,
+.two-columns-content-image__richtext u,
+.two-columns-content-image__richtext ul,
+.two-columns-content-image__richtext ol,
+.two-columns-content-image__richtext li {
+  color: inherit;
+  font-weight: inherit;
+  text-decoration: inherit;
+}
+
+@media (max-width: 1279px) {
+  .two-columns-content-image {
+    padding: 80px 40px;
+  }
+
+  .two-columns-content-image .two-columns-content-image__inner {
+    gap: 60px;
+  }
+
+  .two-columns-content-image__media,
+  .two-columns-content-image__content {
+    max-width: calc(50% - (60px * 1 / 2));
+  }
+}
+
+@media (max-width: 1023px) {
+  .two-columns-content-image {
+    padding: 60px 20px;
+  }
+
+  .two-columns-content-image__inner {
+    gap: 40px;
+  }
+
+  .two-columns-content-image--image-right .two-columns-content-image__inner {
+    flex-direction: row-reverse;
+  }
+
+  .two-columns-content-image__media,
+  .two-columns-content-image__content {
+    max-width: calc(50% - (40px * 1 / 2));
+  }
+
+  .two-columns-content-image__title {
+    font-size: 2rem;
+  }
+}
+
+@media (max-width: 767px) {
+  .two-columns-content-image {
+    padding: 40px 20px;
+  }
+
+  .two-columns-content-image--image-right .two-columns-content-image__inner,
+  .two-columns-content-image__inner {
+    flex-direction: column;
+    gap: 40px !important;
+  }
+
+  .two-columns-content-image__media,
+  .two-columns-content-image__content {
+    max-width: 100%;
+  }
+
+  .two-columns-content-image__media {
+    aspect-ratio: 16/9;
+  }
+
+  .two-columns-content-image__title {
+    font-size: 1.75rem;
+  }
+
+  .two-columns-content-image__richtext {
+    font-size: 0.95rem;
+  }
+
+}

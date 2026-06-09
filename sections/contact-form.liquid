@@ -1,0 +1,164 @@
+{{ 'contact-form.css' | asset_url | stylesheet_tag }}
+
+<section
+  class="contact-form-section"
+  {% if section.settings.section_id != blank %}id="{{ section.settings.section_id }}"{% endif %}
+  style="--section-bg: {{ section.settings.background_color }};"
+>
+  <div class="contact-form-section__inner">
+    <div class="contact-form-section__form-col">
+      {% if section.settings.subtitle != blank %}
+        <p class="contact-form-section__subtitle">{{ section.settings.subtitle }}</p>
+      {% endif %}
+      {% if section.settings.title != blank %}
+        <h2 class="contact-form-section__title">{{ section.settings.title }}</h2>
+      {% endif %}
+      {% form 'contact', class: 'contact-form-section__form' %}
+        {% if form.posted_successfully? %}
+          <p class="contact-form-section__success" role="status">
+            {{ section.settings.success_message | default: 'Thank you for your message. We will get back to you soon.' }}
+          </p>
+        {% endif %}
+        {% if form.errors %}
+          <div class="contact-form-section__errors" role="alert">
+            {{ form.errors | default_errors }}
+          </div>
+        {% endif %}
+        <div class="contact-form-section__field">
+          <label class="contact-form-section__label" for="ContactFormName">{{ section.settings.label_name | default: 'Name' }}</label>
+          <input
+            type="text"
+            id="ContactFormName"
+            name="contact[name]"
+            class="contact-form-section__input"
+            autocomplete="name"
+            value="{% if form.name %}{{ form.name }}{% endif %}"
+          >
+        </div>
+        <div class="contact-form-section__field">
+          <label class="contact-form-section__label" for="ContactFormEmail">{{ section.settings.label_email | default: 'Email' }}</label>
+          <input
+            type="email"
+            id="ContactFormEmail"
+            name="contact[email]"
+            class="contact-form-section__input"
+            autocomplete="email"
+            value="{% if form.email %}{{ form.email }}{% endif %}"
+            required
+          >
+        </div>
+        <div class="contact-form-section__field">
+          <label class="contact-form-section__label" for="ContactFormPhone">{{ section.settings.label_phone | default: 'Phone' }}</label>
+          <input
+            type="tel"
+            id="ContactFormPhone"
+            name="contact[phone]"
+            class="contact-form-section__input"
+            autocomplete="tel"
+            value="{% if form.phone %}{{ form.phone }}{% endif %}"
+          >
+        </div>
+        <div class="contact-form-section__field">
+          <label class="contact-form-section__label" for="ContactFormMessage">{{ section.settings.label_message | default: 'Message' }}</label>
+          <textarea
+            id="ContactFormMessage"
+            name="contact[body]"
+            class="contact-form-section__textarea"
+            rows="6"
+          >{% if form.body %}{{ form.body }}{% endif %}</textarea>
+        </div>
+        <button type="submit" class="button contact-form-section__submit">
+          {{ section.settings.submit_text | default: 'Send' }}
+        </button>
+      {% endform %}
+    </div>
+    <div class="contact-form-section__map-col">
+      {% if section.settings.map_embed != blank %}
+        <div class="contact-form-section__map-wrap">
+          {{ section.settings.map_embed }}
+        </div>
+      {% else %}
+        <div class="contact-form-section__map-placeholder" aria-hidden="true">
+          <span>Add map embed in theme settings</span>
+        </div>
+      {% endif %}
+    </div>
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "Contact form",
+  "settings": [
+    {
+      "type": "text",
+      "id": "section_id",
+      "label": "Section ID"
+    },
+    {
+      "type": "color",
+      "id": "background_color",
+      "label": "Background color",
+      "default": "#ffffff"
+    },
+    {
+      "type": "text",
+      "id": "subtitle",
+      "label": "Subtitle"
+    },
+    {
+      "type": "text",
+      "id": "title",
+      "label": "Title",
+      "default": "Get in touch"
+    },
+    {
+      "type": "text",
+      "id": "label_name",
+      "label": "Name field label",
+      "default": "Name"
+    },
+    {
+      "type": "text",
+      "id": "label_email",
+      "label": "Email field label",
+      "default": "Email"
+    },
+    {
+      "type": "text",
+      "id": "label_phone",
+      "label": "Phone field label",
+      "default": "Phone"
+    },
+    {
+      "type": "text",
+      "id": "label_message",
+      "label": "Message field label",
+      "default": "Message"
+    },
+    {
+      "type": "text",
+      "id": "submit_text",
+      "label": "Submit button text",
+      "default": "Send"
+    },
+    {
+      "type": "textarea",
+      "id": "success_message",
+      "label": "Success message",
+      "default": "Thank you for your message. We will get back to you soon."
+    },
+    {
+      "type": "liquid",
+      "id": "map_embed",
+      "label": "Map embed",
+      "info": "Paste iframe or embed code from Google Maps (e.g. <iframe src=\"...\"></iframe>)."
+    }
+  ],
+  "presets": [
+    {
+      "name": "Contact form"
+    }
+  ]
+}
+{% endschema %}

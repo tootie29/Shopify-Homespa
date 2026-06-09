@@ -1,0 +1,102 @@
+{{ 'contact-details.css' | asset_url | stylesheet_tag }}
+
+<section
+  class="contact-details"
+  {% if section.settings.section_id != blank %}id="{{ section.settings.section_id }}"{% endif %}
+  style="--section-bg: {{ section.settings.background_color }};"
+>
+  <div class="contact-details__inner">
+    {% if section.blocks.size > 0 %}
+      <div class="contact-details__grid">
+        {% for block in section.blocks %}
+          <div class="contact-details__item" {{ block.shopify_attributes }}>
+            {% if block.settings.title != blank %}
+              <h3 class="contact-details__item-title">{{ block.settings.title }}</h3>
+            {% endif %}
+            {% if block.settings.value != blank %}
+              <p class="contact-details__item-value">{{ block.settings.value }}</p>
+            {% endif %}
+            {% if block.settings.richtext != blank %}
+              <div class="contact-details__item-richtext">
+                {{ block.settings.richtext }}
+              </div>
+            {% endif %}
+          </div>
+        {% endfor %}
+      </div>
+    {% endif %}
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "Contact details",
+  "settings": [
+    {
+      "type": "text",
+      "id": "section_id",
+      "label": "Section ID"
+    },
+    {
+      "type": "color",
+      "id": "background_color",
+      "label": "Background color",
+      "default": "#ffffff"
+    }
+  ],
+  "blocks": [
+    {
+      "type": "detail",
+      "name": "Contact detail",
+      "settings": [
+        {
+          "type": "text",
+          "id": "title",
+          "label": "Title"
+        },
+        {
+          "type": "text",
+          "id": "value",
+          "label": "Value (short text)"
+        },
+        {
+          "type": "richtext",
+          "id": "richtext",
+          "label": "Rich text"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Contact details",
+      "blocks": [
+        {
+          "type": "detail",
+          "settings": {
+            "title": "Address",
+            "value": "123 Example Street",
+            "richtext": "<p>City, State 12345</p>"
+          }
+        },
+        {
+          "type": "detail",
+          "settings": {
+            "title": "Phone",
+            "value": "(555) 123-4567",
+            "richtext": ""
+          }
+        },
+        {
+          "type": "detail",
+          "settings": {
+            "title": "Email",
+            "value": "hello@example.com",
+            "richtext": ""
+          }
+        }
+      ]
+    }
+  ]
+}
+{% endschema %}

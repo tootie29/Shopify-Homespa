@@ -1,0 +1,266 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "page_hero_3XNHkL": {
+      "type": "page-hero",
+      "name": "Page hero",
+      "settings": {
+        "section_id": "",
+        "background_image": "shopify://shop_images/about_img.jpg",
+        "title": ""
+      }
+    },
+    "menu_9RBUNE": {
+      "type": "menu",
+      "blocks": {
+        "category_JY8K6i": {
+          "type": "category",
+          "settings": {
+            "title": "Classic",
+            "subtitle": ""
+          }
+        },
+        "item_6gPGzt": {
+          "type": "item",
+          "settings": {
+            "title": "Swedish Harmony",
+            "description": "<p> <em>“Gentle waves of calm.”<br/></em> A soothing massage using long, flowing strokes to ease tension, improve circulation, and leave you feeling completely relaxed. Perfect for first-time spa-goers or anyone seeking gentle relief.</p>",
+            "pricing_line": "60 Min- 450 / 90 Min- Php 600  / 120 Min- Php 800",
+            "duration": "",
+            "price": "",
+            "link": ""
+          }
+        },
+        "item_CHeAMm": {
+          "type": "item",
+          "settings": {
+            "title": "Hilot Harmony",
+            "description": "<p><em>“Ancient Filipino healing at your doorstep.”</em> </p><p>Experience traditional Hilot massage, designed to restore balance and relieve muscle tension using techniques passed down through generations.</p>",
+            "pricing_line": "60 Min- 450 / 90 Min- Php 600  / 120 Min- Php 800",
+            "duration": "",
+            "price": "",
+            "link": ""
+          }
+        },
+        "item_MAzDJN": {
+          "type": "item",
+          "settings": {
+            "title": "Shiatsu Flow",
+            "description": "<p><em>“Pressure meets precision.”</em> </p><p>A Japanese therapy using targeted pressure points to reduce stress, boost energy, and promote overall wellness. Perfect for restoring balance and easing muscular tension.</p>",
+            "pricing_line": "60 Min- 450 / 90 Min- Php 600  / 120 Min- Php 800",
+            "duration": "",
+            "price": "",
+            "link": ""
+          }
+        },
+        "item_378XmE": {
+          "type": "item",
+          "settings": {
+            "title": "Thai Renewal",
+            "description": "<p> <em>“Stretch, release, and energize.”<br/></em> Combining gentle stretching and acupressure, this massage improves flexibility, releases tension, and revitalizes the body. Ideal for anyone seeking both relaxation and invigoration.</p>",
+            "pricing_line": "60 Min- 450 / 90 Min- Php 600  / 120 Min- Php 800",
+            "duration": "",
+            "price": "",
+            "link": ""
+          }
+        },
+        "item_YJt7Up": {
+          "type": "item",
+          "settings": {
+            "title": "Combination Balance",
+            "description": "<p><em>“A massage as unique as you are.”</em> </p><p>We blend multiple techniques to match your specific needs—relaxation, recovery, or therapeutic relief—so you leave feeling perfectly balanced</p>",
+            "pricing_line": "60 Min- 450 / 90 Min- Php 600  / 120 Min- Php 800",
+            "duration": "",
+            "price": "",
+            "link": ""
+          }
+        },
+        "category_RUwRKf": {
+          "type": "category",
+          "settings": {
+            "title": "Premium:",
+            "subtitle": ""
+          }
+        },
+        "item_xbV8cd": {
+          "type": "item",
+          "settings": {
+            "title": "Lymphatic Revive",
+            "description": "<p> <em>“Detox, de-stress, and refresh.”<br/></em> Gentle, rhythmic strokes stimulate lymph flow, reduce swelling, and support your immune system. Ideal for detoxification, post-surgery care, or enhanced overall wellness.</p>",
+            "pricing_line": "90 Min- Php 900 / 120 Min- Php 1200",
+            "duration": "45 min",
+            "price": "$95",
+            "link": ""
+          }
+        },
+        "item_BwRDcM": {
+          "type": "item",
+          "settings": {
+            "title": "Myofascial Release",
+            "description": "<p> <em>“Freedom in every movement.”<br/></em> Targeted therapy that releases tension in connective tissues, improves mobility, and alleviates chronic pain. Perfect for chronic stiffness or postural discomfort.</p>",
+            "pricing_line": "90 Min- Php 900 / 120 Min- Php 1200",
+            "duration": "45 min",
+            "price": "$95",
+            "link": ""
+          }
+        },
+        "item_GtWryC": {
+          "type": "item",
+          "settings": {
+            "title": "Sports Performance",
+            "description": "<p><em>“Recover stronger, perform better.”</em> Designed for athletes or active lifestyles, this massage focuses on muscle recovery, injury prevention, and enhanced performance. Push your limits safely and recover faster.</p>",
+            "pricing_line": "90 Min- Php 900 / 120 Min- Php 1200",
+            "duration": "45 min",
+            "price": "$95",
+            "link": ""
+          }
+        },
+        "category_PgbJ8F": {
+          "type": "category",
+          "settings": {
+            "title": "Add-ons:",
+            "subtitle": "Add focused treatments to elevate your massage experience."
+          }
+        },
+        "item_zngtkw": {
+          "type": "item",
+          "settings": {
+            "title": "Foot Reflexology-  30 Minutes",
+            "description": "<p><em>“Balance your body from the ground up.”<br/></em> Targeted pressure on your feet stimulates corresponding organs and systems, promoting relaxation, improving circulation, and restoring overall harmony.</p>",
+            "pricing_line": "30 min- Php  350 / 60 min- Php 600",
+            "duration": "45 min",
+            "price": "$95",
+            "link": ""
+          }
+        },
+        "item_PkGggG": {
+          "type": "item",
+          "settings": {
+            "title": "Head & Scalp Massage- 30 minutes",
+            "description": "<p><em>“Release tension, refresh your mind.”</em> Focused massage of the head, neck, and scalp relieves stress, reduces headaches, and leaves you feeling calm and revitalized—perfect as an add-on or quick pick-me-up.</p>",
+            "pricing_line": "30 min- Php  350 / 60 min- Php 600",
+            "duration": "45 min",
+            "price": "$95",
+            "link": ""
+          }
+        },
+        "item_AyDATb": {
+          "type": "item",
+          "settings": {
+            "title": "Lymphatic Drainage Facial- 30 minutes",
+            "description": "<p><em>“Glow from the inside out.”</em></p><p>A gentle, targeted facial massage that stimulates lymph flow, reduces puffiness, detoxifies the skin, and promotes a radiant, healthy complexion</p>",
+            "pricing_line": "30 min- Php  350 / 60 min- Php 600",
+            "duration": "45 min",
+            "price": "$95",
+            "link": ""
+          }
+        }
+      },
+      "block_order": [
+        "category_JY8K6i",
+        "item_6gPGzt",
+        "item_CHeAMm",
+        "item_MAzDJN",
+        "item_378XmE",
+        "item_YJt7Up",
+        "category_RUwRKf",
+        "item_xbV8cd",
+        "item_BwRDcM",
+        "item_GtWryC",
+        "category_PgbJ8F",
+        "item_zngtkw",
+        "item_PkGggG",
+        "item_AyDATb"
+      ],
+      "name": "Menu",
+      "settings": {
+        "section_id": "",
+        "background_color": "rgba(0,0,0,0)",
+        "accent_color": "#1d5637",
+        "title": "Treatment menu",
+        "intro": "",
+        "divider_color": "#e5e5e5"
+      }
+    },
+    "group_set_aq8q9h": {
+      "type": "group-set",
+      "blocks": {
+        "group_FAxnLF": {
+          "type": "group",
+          "settings": {
+            "title": "1. Serenity Glow Set",
+            "tagline": "Relax, restore, and refresh your body and mind.",
+            "best_for": "Sleep improvement, deep relaxation, relieving mild stress",
+            "services": "<ul><li>Swedish Harmony with Hot Stone – 60 minutes</li><li>Foot Reflexology – 20 minutes</li><li>Lymphatic Drainage Facial – 10 minutes</li></ul>",
+            "benefit": "Gently calms the nervous system, relieves tension, promotes restful sleep, and enhances overall relaxation.",
+            "price": "750 Php",
+            "card_link": ""
+          }
+        },
+        "group_F7nUfK": {
+          "type": "group",
+          "settings": {
+            "title": "2. Vital Harmony Set",
+            "tagline": "Promote circulation, relieve tension, and restore vitality.",
+            "best_for": "Stress relief, mental clarity, and increased energy",
+            "services": "<ul><li>Hilot Harmony with Ventosa –  60 minutes</li><li>Head & Scalp Massage – 20 minutes</li><li>Lymphatic Drainage Facial – 10 minutes</li></ul>",
+            "benefit": "Reduces muscle tension, boosts circulation, alleviates stress, and rejuvenates the mind for better focus and vitality.",
+            "price": "Php 750",
+            "card_link": ""
+          }
+        },
+        "group_xtKPX6": {
+          "type": "group",
+          "settings": {
+            "title": "3. Rejuvenation Bliss Set",
+            "tagline": "Detox, relax, and glow from head to toe.",
+            "best_for": "Overall wellness, detox, and skin rejuvenation",
+            "services": "<ul><li>Swedish Harmony with Hot Stone – 60 minutes</li><li>Head & Scalp Massage – 20 minutes</li><li>Lymphatic Drainage Facial – 10 minutes</li></ul>",
+            "benefit": "Promotes lymphatic drainage, reduces puffiness, improves circulation, and restores energy for full-body wellness.",
+            "price": "750 Php",
+            "card_link": ""
+          }
+        },
+        "group_fq9AWJ": {
+          "type": "group",
+          "settings": {
+            "title": "4. Complete Harmony Set",
+            "tagline": "Full-body care for total wellness and restoration.",
+            "best_for": "Muscle recovery, chronic tension, and total-body balance",
+            "services": "<ul><li>Hilot Harmony with Ventosa – 90 minutes</li><li>Foot Reflexology – 20 minutesLymphatic</li><li> Drainage Facial – 10 minutes</li></ul>",
+            "benefit": "Ideal for targeted muscle recovery, relieving chronic tension, balancing energy, and enhancing overall health and vitality.",
+            "price": "1,100 Php",
+            "card_link": ""
+          }
+        }
+      },
+      "block_order": [
+        "group_FAxnLF",
+        "group_F7nUfK",
+        "group_xtKPX6",
+        "group_fq9AWJ"
+      ],
+      "name": "Group Set",
+      "settings": {
+        "section_id": "",
+        "background_color": "rgba(0,0,0,0)",
+        "card_background_color": "#ffffff",
+        "title": "Signature Wellness Sets",
+        "intro": ""
+      }
+    }
+  },
+  "order": [
+    "page_hero_3XNHkL",
+    "menu_9RBUNE",
+    "group_set_aq8q9h"
+  ]
+}

@@ -1,0 +1,75 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "product_detail_service": {
+      "type": "product-detail-service",
+      "blocks": {
+        "feature_1": {
+          "type": "feature",
+          "settings": {
+            "text": "This is just placeholder text. Don't be alarmed, this is just here to fill up space since your finalized copy isn't ready yet."
+          }
+        },
+        "feature_2": {
+          "type": "feature",
+          "settings": {
+            "text": "This is just placeholder text. Don't be alarmed, this is just here to fill up space since your finalized copy isn't ready yet."
+          }
+        },
+        "feature_3": {
+          "type": "feature",
+          "settings": {
+            "text": "This is just placeholder text. Don't be alarmed, this is just here to fill up space since your finalized copy isn't ready yet."
+          }
+        }
+      },
+      "block_order": [
+        "feature_1",
+        "feature_2",
+        "feature_3"
+      ],
+      "name": "Product detail (service)",
+      "settings": {
+        "section_id": "",
+        "background_color": "#fffbfb",
+        "button_text": "Schedule An Appointment",
+        "button_url": "shopify://pages/contact"
+      }
+    },
+    "product_faq": {
+      "type": "product-faq",
+      "name": "Product FAQ",
+      "settings": {
+        "section_id": "",
+        "background_color": "#fffbfb",
+        "title": "Frequently asked question",
+        "empty_message": ""
+      }
+    },
+    "cta_section": {
+      "type": "cta-section",
+      "name": "CTA Section",
+      "settings": {
+        "section_id": "",
+        "title": "This is just a placeholder headline, we will replace it once your website copy is finalized.",
+        "description": "Sometimes it's nice to put in text just to get an idea of how text will fill in a space on your website.",
+        "button_text": "Schedule An Appointment",
+        "button_url": "",
+        "content_bg_color": "#1d5637"
+      }
+    }
+  },
+  "order": [
+    "product_detail_service",
+    "product_faq",
+    "cta_section"
+  ]
+}

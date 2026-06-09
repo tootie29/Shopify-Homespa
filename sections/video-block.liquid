@@ -1,0 +1,97 @@
+{{ 'video-block.css' | asset_url | stylesheet_tag }}
+
+<section
+  class="video-block"
+  {% if section.settings.section_id != blank %}id="{{ section.settings.section_id }}"{% endif %}
+  style="--section-bg: {{ section.settings.background_color }};"
+>
+  <div class="video-block__inner">
+    <div class="video-block__content">
+      {% if section.settings.title != blank %}
+        <h2 class="video-block__title">{{ section.settings.title }}</h2>
+      {% endif %}
+      {% if section.settings.richtext != blank %}
+        <div class="video-block__richtext">
+          {{ section.settings.richtext }}
+        </div>
+      {% endif %}
+    </div>
+    {% if section.settings.video_embed != blank %}
+      <div class="video-block__video">
+        {{ section.settings.video_embed }}
+      </div>
+    {% elsif section.settings.image != blank %}
+      <div class="video-block__image-wrap">
+        {{
+          section.settings.image
+          | image_url: width: 3840
+          | image_tag:
+            loading: 'lazy',
+            widths: '375, 550, 750, 1100, 1500, 2000, 3000, 3840',
+            sizes: '100vw',
+            class: 'video-block__image',
+            alt: section.settings.image.alt | escape
+        }}
+      </div>
+    {% endif %}
+  </div>
+</section>
+
+{% stylesheet %}
+  .video-block__image-wrap,
+  .video-block__image-wrap img,
+  .video-block__image {
+    width: 100%;
+    max-width: 100%;
+    height: auto;
+    display: block;
+  }
+{% endstylesheet %}
+
+{% schema %}
+{
+  "name": "Video block",
+  "settings": [
+    {
+      "type": "text",
+      "id": "section_id",
+      "label": "Section ID"
+    },
+    {
+      "type": "color",
+      "id": "background_color",
+      "label": "Background color",
+      "default": "#f5f5f5"
+    },
+    {
+      "type": "text",
+      "id": "title",
+      "label": "Title",
+      "default": "This is just a placeholder headline, we will replace it once your website copy is finalized."
+    },
+    {
+      "type": "richtext",
+      "id": "richtext",
+      "label": "Description",
+      "default": "<p>This is just placeholder text. Don't be alarmed, this is just here to fill up space since your finalized copy isn't ready yet.</p>"
+    },
+    {
+      "type": "image_picker",
+      "id": "image",
+      "label": "Image",
+      "info": "Full-width image shown when Video embed code is empty. If both are blank, no media appears."
+    },
+    {
+      "type": "html",
+      "id": "video_embed",
+      "label": "Video embed code",
+      "info": "Paste your YouTube or other iframe embed code. If set, video is shown instead of the image."
+    }
+  ],
+  "presets": [
+    {
+      "name": "Video block"
+    }
+  ]
+}
+{% endschema %}

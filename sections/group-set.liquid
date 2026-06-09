@@ -1,0 +1,209 @@
+{{ 'group-set.css' | asset_url | stylesheet_tag }}
+
+<section
+  class="group-set"
+  {% if section.settings.section_id != blank %}id="{{ section.settings.section_id }}"{% endif %}
+  style="--group-set-bg: {{ section.settings.background_color }}; --group-set-card-bg: {{ section.settings.card_background_color }};"
+>
+  <div class="group-set__inner">
+    {% if section.settings.title != blank or section.settings.intro != blank %}
+      <header class="group-set__header">
+        {% if section.settings.title != blank %}
+          <h2 class="group-set__heading">{{ section.settings.title }}</h2>
+        {% endif %}
+        {% if section.settings.intro != blank %}
+          <div class="group-set__intro rte">
+            {{ section.settings.intro }}
+          </div>
+        {% endif %}
+      </header>
+    {% endif %}
+
+    {% if section.blocks.size > 0 %}
+      <div class="group-set__grid">
+        {% for block in section.blocks %}
+          {% capture card_inner %}
+            <div class="group-set__card-inner">
+              {% if block.settings.title != blank %}
+                <h3 class="group-set__title">{{ block.settings.title }}</h3>
+              {% endif %}
+              {% if block.settings.tagline != blank %}
+                <p class="group-set__tagline">{{ block.settings.tagline }}</p>
+              {% endif %}
+              {% if block.settings.best_for != blank %}
+                <p class="group-set__best-for">
+                  <strong class="group-set__best-for-label">Best for:</strong>
+                  <span class="group-set__best-for-text">{{ block.settings.best_for }}</span>
+                </p>
+              {% endif %}
+              {% if block.settings.services != blank %}
+                <div class="group-set__services rte">
+                  {{ block.settings.services }}
+                </div>
+              {% endif %}
+              {% if block.settings.benefit != blank or block.settings.price != blank %}
+                <p class="group-set__benefit-line">
+                  {% if block.settings.benefit != blank %}
+                    <span class="group-set__benefit-copy">Benefit: {{ block.settings.benefit }}</span>
+                  {% endif %}
+                  {% if block.settings.price != blank %}
+                    <strong class="group-set__price">{% if block.settings.benefit != blank %} {% endif %}{{ block.settings.price }}</strong>
+                  {% endif %}
+                </p>
+              {% endif %}
+            </div>
+          {% endcapture %}
+
+          <article class="group-set__card" {{ block.shopify_attributes }}>
+            {% if block.settings.card_link != blank %}
+              <a class="group-set__card-link" href="{{ block.settings.card_link }}">
+                {{ card_inner }}
+              </a>
+            {% else %}
+              {{ card_inner }}
+            {% endif %}
+          </article>
+        {% endfor %}
+      </div>
+    {% endif %}
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "Group Set",
+  "settings": [
+    {
+      "type": "text",
+      "id": "section_id",
+      "label": "Section ID"
+    },
+    {
+      "type": "color",
+      "id": "background_color",
+      "label": "Background color",
+      "default": "#00000000"
+    },
+    {
+      "type": "color",
+      "id": "card_background_color",
+      "label": "Card background",
+      "default": "#ffffff"
+    },
+    {
+      "type": "text",
+      "id": "title",
+      "label": "Heading",
+      "default": "Signature Wellness Sets"
+    },
+    {
+      "type": "richtext",
+      "id": "intro",
+      "label": "Intro text"
+    }
+  ],
+  "blocks": [
+    {
+      "type": "group",
+      "name": "Set",
+      "settings": [
+        {
+          "type": "text",
+          "id": "title",
+          "label": "Title",
+          "default": "Serenity Glow Set"
+        },
+        {
+          "type": "textarea",
+          "id": "tagline",
+          "label": "Tagline",
+          "default": "Relax, restore, and refresh your body and mind."
+        },
+        {
+          "type": "textarea",
+          "id": "best_for",
+          "label": "Best for",
+          "default": "Sleep improvement, deep relaxation, relieving mild stress",
+          "info": "Text after “Best for:”"
+        },
+        {
+          "type": "richtext",
+          "id": "services",
+          "label": "Services",
+          "default": "<ul><li>Swedish Harmony with Hot Stone – 60 minutes</li><li>Foot Reflexology – 20 minutes</li><li>Lymphatic Drainage Facial – 10 minutes</li></ul>"
+        },
+        {
+          "type": "textarea",
+          "id": "benefit",
+          "label": "Benefit",
+          "default": "Gently calms the nervous system, relieves tension, promotes restful sleep, and enhances overall relaxation.",
+          "info": "Shown after “Benefit:” in italics; price is separate."
+        },
+        {
+          "type": "text",
+          "id": "price",
+          "label": "Price",
+          "default": "750 Php"
+        },
+        {
+          "type": "url",
+          "id": "card_link",
+          "label": "Link (optional)",
+          "info": "Makes the entire card clickable."
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Group Set",
+      "blocks": [
+        {
+          "type": "group",
+          "settings": {
+            "title": "Serenity Glow Set",
+            "tagline": "Relax, restore, and refresh your body and mind.",
+            "best_for": "Sleep improvement, deep relaxation, relieving mild stress",
+            "services": "<ul><li>Swedish Harmony with Hot Stone – 60 minutes</li><li>Foot Reflexology – 20 minutes</li><li>Lymphatic Drainage Facial – 10 minutes</li></ul>",
+            "benefit": "Gently calms the nervous system, relieves tension, promotes restful sleep, and enhances overall relaxation.",
+            "price": "750 Php"
+          }
+        },
+        {
+          "type": "group",
+          "settings": {
+            "title": "Vital Harmony Set",
+            "tagline": "Promote circulation, relieve tension, and restore vitality.",
+            "best_for": "Stress relief, mental clarity, and increased energy",
+            "services": "<ul><li>Hilot Harmony with Ventosa – 60 minutes</li><li>Head & Scalp Massage – 20 minutes</li><li>Lymphatic Drainage Facial – 10 minutes</li></ul>",
+            "benefit": "Reduces muscle tension, boosts circulation, alleviates stress, and rejuvenates the mind for better focus and vitality.",
+            "price": "750 Php"
+          }
+        },
+        {
+          "type": "group",
+          "settings": {
+            "title": "Rejuvenation Bliss Set",
+            "tagline": "Detox, relax, and glow from head to toe.",
+            "best_for": "Overall wellness, detox, and skin rejuvenation",
+            "services": "<ul><li>Swedish Harmony with Hot Stone – 60 minutes</li><li>Head & Scalp Massage – 20 minutes</li><li>Lymphatic Drainage Facial – 10 minutes</li></ul>",
+            "benefit": "Promotes lymphatic drainage, reduces puffiness, improves circulation, and restores energy for full-body wellness.",
+            "price": "750 Php"
+          }
+        },
+        {
+          "type": "group",
+          "settings": {
+            "title": "Complete Harmony Set",
+            "tagline": "Full-body care for total wellness and restoration.",
+            "best_for": "Muscle recovery, chronic tension, and total-body balance",
+            "services": "<ul><li>Hilot Harmony with Ventosa – 90 minutes</li><li>Foot Reflexology – 20 minutes</li><li>Lymphatic Drainage Facial – 10 minutes</li></ul>",
+            "benefit": "Ideal for targeted muscle recovery, relieving chronic tension, balancing energy, and enhancing overall health and vitality.",
+            "price": "1,100 Php"
+          }
+        }
+      ]
+    }
+  ]
+}
+{% endschema %}

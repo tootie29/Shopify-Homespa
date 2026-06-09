@@ -1,0 +1,130 @@
+{{ 'service-grid.css' | asset_url | stylesheet_tag }}
+
+<section
+  class="service-grid"
+  {% if section.settings.section_id != blank %}id="{{ section.settings.section_id }}"{% endif %}
+>
+  <div class="service-grid__inner">
+    <div class="service-grid__header">
+      {% if section.settings.title != blank %}
+        <h2 class="service-grid__title">{{ section.settings.title }}</h2>
+      {% endif %}
+      {% if section.settings.description != blank %}
+        <p class="service-grid__description">{{ section.settings.description }}</p>
+      {% endif %}
+    </div>
+    <div class="service-grid__grid">
+      {% for block in section.blocks %}
+        {% assign pg = block.settings.page %}
+        {% if pg != blank %}
+          <div class="service-grid__cell" {{ block.shopify_attributes }}>
+            <a class="service-grid__card" href="{{ pg.url }}">
+              <div class="service-grid__card-image-wrap">
+                {% if block.settings.image != blank %}
+                  {{ block.settings.image | image_url: width: 800 | image_tag: class: 'service-grid__image', widths: '400, 600, 800', sizes: '(min-width: 1024px) 33vw, (min-width: 768px) 50vw, 100vw', loading: 'lazy', alt: block.settings.image.alt | default: block.settings.title | default: pg.title | escape }}
+                {% else %}
+                  {{ 'image' | placeholder_svg_tag: 'service-grid__image service-grid__image--placeholder' }}
+                {% endif %}
+              </div>
+              <div class="service-grid__body">
+                <h3 class="service-grid__card-title">
+                  {% if block.settings.title != blank %}
+                    {{ block.settings.title }}
+                  {% else %}
+                    {{ pg.title }}
+                  {% endif %}
+                </h3>
+                {% assign desc_text = block.settings.description %}
+                {% if desc_text == blank and pg.content != blank %}
+                  {% assign desc_text = pg.content | strip_html | truncate: 120 %}
+                {% endif %}
+                {% if desc_text != blank %}
+                  <p class="service-grid__card-description">{{ desc_text }}</p>
+                {% endif %}
+              </div>
+              {% if section.settings.read_more_text != blank %}
+                <span class="service-grid__link">
+                  {{ section.settings.read_more_text }}
+                  <span class="service-grid__arrow" aria-hidden="true">→</span>
+                </span>
+              {% endif %}
+            </a>
+          </div>
+        {% endif %}
+      {% endfor %}
+    </div>
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "Service grid",
+  "settings": [
+    {
+      "type": "text",
+      "id": "section_id",
+      "label": "Section ID"
+    },
+    {
+      "type": "text",
+      "id": "title",
+      "label": "Title",
+      "default": "What We’re Offering"
+    },
+    {
+      "type": "textarea",
+      "id": "description",
+      "label": "Short description",
+      "default": "This is just placeholder text. Don’t be alarmed, this is just here to fill up space since your finalized copy isn’t ready yet."
+    },
+    {
+      "type": "text",
+      "id": "read_more_text",
+      "label": "Read more text",
+      "default": "View Details"
+    }
+  ],
+  "blocks": [
+    {
+      "type": "page_item",
+      "name": "Page",
+      "limit": 16,
+      "settings": [
+        {
+          "type": "page",
+          "id": "page",
+          "label": "Page"
+        },
+        {
+          "type": "image_picker",
+          "id": "image",
+          "label": "Image",
+          "info": "Optional. Uses a placeholder if empty."
+        },
+        {
+          "type": "text",
+          "id": "title",
+          "label": "Title override",
+          "info": "Optional. Uses the page title if empty."
+        },
+        {
+          "type": "textarea",
+          "id": "description",
+          "label": "Description override",
+          "info": "Optional. Uses an excerpt from the page body if empty."
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Service grid",
+      "blocks": [
+        { "type": "page_item" },
+        { "type": "page_item" },
+        { "type": "page_item" }
+      ]
+    }
+  ]
+}
+{% endschema %}

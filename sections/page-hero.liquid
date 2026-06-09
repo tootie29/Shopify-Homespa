@@ -1,0 +1,61 @@
+{{ 'page-hero.css' | asset_url | stylesheet_tag }}
+
+<section
+  class="page-hero"
+  {% if section.settings.section_id != blank %}id="{{ section.settings.section_id }}"{% endif %}
+>
+  <div class="page-hero__container">
+    <div class="page-hero__bg">
+      {% if section.settings.background_image != blank %}
+        {{ section.settings.background_image | image_url: width: 1920 | image_tag: class: 'page-hero__bg-image', widths: '800, 1200, 1600, 1920', sizes: '100vw', alt: '' }}
+      {% else %}
+        <div class="page-hero__bg-image" style="background-color: #e0e0e0;"></div>
+      {% endif %}
+    </div>
+    <div class="page-hero__overlay" aria-hidden="true"></div>
+    <div class="page-hero__inner">
+      <h1 class="page-hero__title">
+        {% if section.settings.title != blank %}
+          {{ section.settings.title }}
+        {% elsif page != blank and page.title != blank %}
+          {{ page.title }}
+        {% elsif collection != blank and collection.title != blank %}
+          {{ collection.title }}
+        {% elsif article != blank and article.title != blank %}
+          {{ article.title }}
+        {% else %}
+          {{ shop.name }}
+        {% endif %}
+      </h1>
+    </div>
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "Page hero",
+  "settings": [
+    {
+      "type": "text",
+      "id": "section_id",
+      "label": "Section ID"
+    },
+    {
+      "type": "image_picker",
+      "id": "background_image",
+      "label": "Background image"
+    },
+    {
+      "type": "text",
+      "id": "title",
+      "label": "Title (leave blank to use page title)",
+      "info": "Override the page title. If empty, the current page title is shown."
+    }
+  ],
+  "presets": [
+    {
+      "name": "Page hero"
+    }
+  ]
+}
+{% endschema %}

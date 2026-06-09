@@ -1,0 +1,89 @@
+{% comment %}
+  FAQ from product metafield custom.faq (list of metaobject references).
+  Metaobject type uses keys: faq_question, faq_answer.
+{% endcomment %}
+{% assign faq_list = product.metafields.custom.faq.value %}
+
+<link rel="stylesheet" href="https://unpkg.com/accordion-js@3.4.1/dist/accordion.min.css" media="print" onload="this.media='all'">
+{{ 'product-faq.css' | asset_url | stylesheet_tag }}
+
+<section
+    class="product-faq"
+    {% if section.settings.section_id != blank %}id="{{ section.settings.section_id }}"{% endif %}
+    style="--section-bg: {{ section.settings.background_color }};"
+  >
+    <div class="product-faq__inner">
+      {% if section.settings.title != blank %}
+        <h3 class="product-faq__heading">{{ section.settings.title }}</h3>
+      {% endif %}
+      <div class="accordion-container product-faq__accordion" id="ProductFaqAccordion">
+        {% if faq_list != blank %}
+          {% for item in faq_list %}
+            <div class="ac">
+              <h4 class="ac-trigger product-faq__trigger">
+                <span class="product-faq__trigger-text">{{ item.faq_question }}</span>
+                <span class="product-faq__trigger-icon" aria-hidden="true">
+                  <svg width="13" height="14" viewBox="0 0 13 14" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M11.625 5.98114C12.2917 6.36604 12.2917 7.32829 11.625 7.71319L1.5 13.5589C0.833331 13.9438 -6.71646e-07 13.4626 -6.37997e-07 12.6928L-1.26952e-07 1.0015C-9.33032e-08 0.231695 0.833333 -0.249429 1.5 0.135471L11.625 5.98114Z" fill="currentColor"/>
+                  </svg>
+                </span>
+              </h4>
+              <div class="ac-panel">
+                <div class="ac-text product-faq__panel">
+                  {{ item.faq_answer }}
+                </div>
+              </div>
+            </div>
+          {% endfor %}
+        {% else %}
+          <p class="product-faq__empty">{{ section.settings.empty_message | default: 'Add FAQ items via product metafield custom.faq (list of metaobjects).' }}</p>
+        {% endif %}
+      </div>
+    </div>
+  </section>
+
+  <script src="https://unpkg.com/accordion-js@3.4.1/dist/accordion.min.js" defer></script>
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      var container = document.getElementById('ProductFaqAccordion');
+      if (container && typeof Accordion !== 'undefined') {
+        new Accordion(container, { duration: 400, collapse: true });
+      }
+    });
+  </script>
+
+{% schema %}
+{
+  "name": "Product FAQ",
+  "settings": [
+    {
+      "type": "text",
+      "id": "section_id",
+      "label": "Section ID"
+    },
+    {
+      "type": "color",
+      "id": "background_color",
+      "label": "Background color",
+      "default": "#ffffff"
+    },
+    {
+      "type": "text",
+      "id": "title",
+      "label": "Heading",
+      "default": "Frequently asked question"
+    },
+    {
+      "type": "text",
+      "id": "empty_message",
+      "label": "Message when no FAQ (preview)",
+      "info": "Shown in theme editor when product has no FAQ metafield yet."
+    }
+  ],
+  "presets": [
+    {
+      "name": "Product FAQ"
+    }
+  ]
+}
+{% endschema %}

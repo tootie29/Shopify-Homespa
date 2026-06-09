@@ -1,0 +1,138 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "page_hero": {
+      "type": "page-hero",
+      "name": "Page hero",
+      "settings": {
+        "section_id": "",
+        "background_image": "shopify://shop_images/281c2094f923b24c3c14a1e01985efbc7214c5d0.jpg",
+        "title": ""
+      }
+    },
+    "three_grid_blocks_with_title_6AMBTJ": {
+      "type": "three-grid-blocks-with-title",
+      "blocks": {
+        "block_YMjiAR": {
+          "type": "block",
+          "settings": {
+            "image": "shopify://shop_images/grid_one.jpg",
+            "title": "This is just placeholder text",
+            "description": "<p>This is just placeholder text. Don't be alarmed, this is just here to fill up space since your finalized copy isn't ready yet.</p>"
+          }
+        },
+        "block_J9z6NR": {
+          "type": "block",
+          "settings": {
+            "image": "shopify://shop_images/grid_two.jpg",
+            "title": "This is just placeholder text",
+            "description": "<p>This is just placeholder text. Don't be alarmed, this is just here to fill up space since your finalized copy isn't ready yet.</p>"
+          }
+        },
+        "block_p3npQn": {
+          "type": "block",
+          "settings": {
+            "image": "shopify://shop_images/grid_three.jpg",
+            "title": "This is just placeholder text",
+            "description": "<p>This is just placeholder text. Don't be alarmed, this is just here to fill up space since your finalized copy isn't ready yet.</p>"
+          }
+        }
+      },
+      "block_order": [
+        "block_YMjiAR",
+        "block_J9z6NR",
+        "block_p3npQn"
+      ],
+      "name": "Three Grid Blocks",
+      "settings": {
+        "section_id": "",
+        "background_color": "#fffbfb",
+        "title": "Why Work With Us?",
+        "description": "<p>This is just placeholder text. Don't be alarmed, this is just here to fill up space since your finalized copy isn't ready yet. Once we have your content finalized, we'll replace this placeholder text with your real content.</p>"
+      }
+    },
+    "column_boxed_wa9hH6": {
+      "type": "column-boxed",
+      "blocks": {
+        "role_4k48wJ": {
+          "type": "role",
+          "settings": {
+            "sub_title": "Open Roles",
+            "title": "This is just placeholder text",
+            "position": "Full time",
+            "rate": "$300-$800",
+            "currency": "AUS",
+            "more_details": "<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exe</p>",
+            "button_text": "Submit Application",
+            "button_url": "https://homespa-7943.myshopify.com/pages/contact"
+          }
+        },
+        "role_XK6PM8": {
+          "type": "role",
+          "settings": {
+            "sub_title": "Open Roles",
+            "title": "This is just placeholder text",
+            "position": "Full time",
+            "rate": "$300-$800",
+            "currency": "AUS",
+            "more_details": "",
+            "button_text": "Submit Application",
+            "button_url": "https://homespa-7943.myshopify.com/pages/contact"
+          }
+        },
+        "role_xPGcNP": {
+          "type": "role",
+          "settings": {
+            "sub_title": "Open Roles",
+            "title": "This is just placeholder text",
+            "position": "Full time",
+            "rate": "$300-$800",
+            "currency": "AUS",
+            "more_details": "<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exe</p>",
+            "button_text": "Submit Application",
+            "button_url": "https://homespa-7943.myshopify.com/pages/contact"
+          }
+        },
+        "role_A3rBRC": {
+          "type": "role",
+          "settings": {
+            "sub_title": "Open Roles",
+            "title": "This is just placeholder text",
+            "position": "Full time",
+            "rate": "$300-$800",
+            "currency": "AUS",
+            "more_details": "",
+            "button_text": "Submit Application",
+            "button_url": "https://homespa-7943.myshopify.com/pages/contact"
+          }
+        }
+      },
+      "block_order": [
+        "role_4k48wJ",
+        "role_XK6PM8",
+        "role_xPGcNP",
+        "role_A3rBRC"
+      ],
+      "name": "Column Boxed",
+      "settings": {
+        "section_id": "",
+        "background_color": "#fffbfb",
+        "title": "Our Open Roles",
+        "description": ""
+      }
+    }
+  },
+  "order": [
+    "page_hero",
+    "three_grid_blocks_with_title_6AMBTJ",
+    "column_boxed_wa9hH6"
+  ]
+}
