@@ -40,6 +40,7 @@
           "type": "page_item",
           "settings": {
             "page": "body",
+            "image": "shopify://shop_images/focused-back-massage.webp",
             "title": "Body",
             "description": "Restore balance, ease tension, and reconnect with your body through our thoughtfully curated massage therapies—designed for total relaxation and healing."
           }
@@ -48,6 +49,7 @@
           "type": "page_item",
           "settings": {
             "page": "nails",
+            "image": "shopify://shop_images/boxed.webp",
             "title": "Nails",
             "description": "Refine, nourish, and care for your hands and feet with our thoughtfully curated nail treatments—designed for beauty, comfort, and everyday confidence."
           }
