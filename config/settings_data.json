@@ -9,7 +9,7 @@
  */
 {
   "current": {
-    "header_logo": "shopify://shop_images/homespa_logo.png",
+    "header_logo": "shopify://shop_images/homespa_logo.webp",
     "header_menu": "main-menu-1",
     "header_cta_link": "shopify://pages/contact",
     "top_bar_bg": "#ffffff",
@@ -19,7 +19,7 @@
     "social_facebook": "https://www.facebook.com/homespa2go",
     "social_twitter": "",
     "social_instagram": "https://www.instagram.com/homespa2go_official",
-    "footer_logo": "shopify://shop_images/homespa_logo.png",
+    "footer_logo": "shopify://shop_images/homespa_logo.webp",
     "footer_services_menu": "services-menu",
     "footer_quick_links_menu": "main-menu-1",
     "content_for_index": []
