@@ -96,6 +96,7 @@
       "name": "CTA Section",
       "settings": {
         "section_id": "",
+        "image": "shopify://shop_images/massage_1.webp",
         "title": "You deserve to relax. Let Homespa2Go bring luxury spa treatments straight to your home so you can unwind without leaving your space.",
         "description": "Ready to turn your home into a private spa experience? Book your Homespa2Go session today and enjoy luxury treatments delivered right to your doorstep—anytime you need to relax, reset, or recharge. Book now and experience true comfort at home.",
         "button_text": "Schedule An Appointment",
