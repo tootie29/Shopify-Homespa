@@ -17,7 +17,7 @@
         "description": "Indulge in premium spa treatments without leaving your home. Affordable, on-demand, and personalized for your ultimate comfort.",
         "button_text": "Schedule an Appointment",
         "button_link": "shopify://pages/contact",
-        "image": "shopify://shop_images/Rectangle_5968.jpg"
+        "image": "shopify://shop_images/Rectangle_5968.webp"
       }
     },
     "collection_slider_t8kYea": {
@@ -39,7 +39,7 @@
           "type": "page_item",
           "settings": {
             "page": "body",
-            "image": "shopify://shop_images/grid_three.jpg",
+            "image": "shopify://shop_images/grid_three.webp",
             "title": "",
             "description": "Restore balance, ease tension, and reconnect with your body through our thoughtfully curated massage therapies—designed for total relaxation and healing."
           }
@@ -48,7 +48,7 @@
           "type": "page_item",
           "settings": {
             "page": "nails",
-            "image": "shopify://shop_images/boxed.jpg",
+            "image": "shopify://shop_images/boxed_1.webp",
             "title": "",
             "description": "Refine, nourish, and care for your hands and feet with our thoughtfully curated nail treatments—designed for beauty, comfort, and everyday confidence."
           }
@@ -72,7 +72,7 @@
       "settings": {
         "section_id": "",
         "background_color": "#ffffff",
-        "image": "shopify://shop_images/boxed.jpg",
+        "image": "shopify://shop_images/boxed_1.webp",
         "title": "Homespa2Go — Luxury Relaxation, Delivered to You.",
         "description": "<p>Experience luxury wellness without leaving your home. Homespa2Go delivers premium spa treatments right to your doorstep—combining convenience, expert care, and affordable indulgence. Our professional therapists transform your space into a private sanctuary for relaxation and renewal. Whether it’s a quick escape or full pampering session, your comfort comes first.</p>\n\n<p><b>Relax deeper. Stress less. Stay where you are.<b></b></b></p>",
         "button_label": "Read More",
@@ -85,7 +85,6 @@
         "featured_product_jLEY8K": {
           "type": "featured_product",
           "settings": {
-            "image": "shopify://shop_images/isolated-spa-wellness-products-transparent-free-png_1.png",
             "title": "Products Placeholder Text",
             "price_text": "$9.00",
             "link": ""
@@ -94,7 +93,6 @@
         "featured_product_8LFYLK": {
           "type": "featured_product",
           "settings": {
-            "image": "shopify://shop_images/Group_47551.png",
             "title": "Products Placeholder Text",
             "price_text": "$9.00",
             "link": ""
@@ -103,7 +101,6 @@
         "featured_product_izGXRf": {
           "type": "featured_product",
           "settings": {
-            "image": "shopify://shop_images/Group_47551.png",
             "title": "Products Placeholder Text",
             "price_text": "$9.00",
             "link": ""
@@ -112,7 +109,6 @@
         "featured_product_ExMXRw": {
           "type": "featured_product",
           "settings": {
-            "image": "shopify://shop_images/Group_47551.png",
             "title": "Products Placeholder Text",
             "price_text": "$9.00",
             "link": ""
@@ -121,7 +117,6 @@
         "featured_product_BdADJ3": {
           "type": "featured_product",
           "settings": {
-            "image": "shopify://shop_images/Group_47551.png",
             "title": "Products Placeholder Text",
             "price_text": "$9.00",
             "link": ""
@@ -163,7 +158,7 @@
       "name": "CTA Section",
       "settings": {
         "section_id": "",
-        "image": "shopify://shop_images/focused-back-massage.png",
+        "image": "shopify://shop_images/focused-back-massage.webp",
         "title": "You deserve to relax. Let Homespa2Go bring luxury spa treatments straight to your home so you can unwind without leaving your space.",
         "description": "Ready to turn your home into a private spa experience? Book your Homespa2Go session today and enjoy luxury treatments delivered right to your doorstep—anytime you need to relax, reset, or recharge.\nBook now and experience true comfort at home.",
         "button_text": "Schedule An Appointment",
