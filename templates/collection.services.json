@@ -72,6 +72,7 @@
       "name": "CTA Section",
       "settings": {
         "section_id": "",
+        "image": "shopify://shop_images/massage_1.webp",
         "title": "Take a break from the stress and let relaxation come to you.",
         "description": "With Homespa2Go, premium spa care is always just a booking away—comfortable, convenient, and designed around your lifestyle.\nSchedule your home spa experience today and treat yourself to the care you deserve.",
         "button_text": "Schedule An Appointment",
