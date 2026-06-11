@@ -14,7 +14,7 @@
       "name": "Page hero",
       "settings": {
         "section_id": "",
-        "background_image": "shopify://shop_images/281c2094f923b24c3c14a1e01985efbc7214c5d0.jpg",
+        "background_image": "shopify://shop_images/281c2094f923b24c3c14a1e01985efbc7214c5d0_430x_3e57a0c8-32fa-4dc1-8645-1428c559bc14.webp",
         "title": ""
       }
     },
@@ -40,7 +40,6 @@
           "type": "page_item",
           "settings": {
             "page": "body",
-            "image": "shopify://shop_images/grid_three.jpg",
             "title": "Body",
             "description": "Restore balance, ease tension, and reconnect with your body through our thoughtfully curated massage therapies—designed for total relaxation and healing."
           }
@@ -49,7 +48,6 @@
           "type": "page_item",
           "settings": {
             "page": "nails",
-            "image": "shopify://shop_images/grid_two.jpg",
             "title": "Nails",
             "description": "Refine, nourish, and care for your hands and feet with our thoughtfully curated nail treatments—designed for beauty, comfort, and everyday confidence."
           }
@@ -72,7 +70,6 @@
       "name": "CTA Section",
       "settings": {
         "section_id": "",
-        "image": "shopify://shop_images/massage.png",
         "title": "Take a break from the stress and let relaxation come to you.",
         "description": "With Homespa2Go, premium spa care is always just a booking away—comfortable, convenient, and designed around your lifestyle.\nSchedule your home spa experience today and treat yourself to the care you deserve.",
         "button_text": "Schedule An Appointment",
