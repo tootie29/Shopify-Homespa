@@ -14,7 +14,7 @@
       "name": "Page hero",
       "settings": {
         "section_id": "",
-        "background_image": "shopify://shop_images/grid_two.jpg",
+        "background_image": "shopify://shop_images/boxed_1.webp",
         "title": ""
       }
     },
@@ -59,7 +59,7 @@
       "name": "Menu",
       "settings": {
         "section_id": "",
-        "background_color": "#00000000",
+        "background_color": "rgba(0,0,0,0)",
         "accent_color": "#1d5637",
         "title": "",
         "intro": "",
@@ -114,7 +114,7 @@
       "name": "Group Set",
       "settings": {
         "section_id": "",
-        "background_color": "#00000000",
+        "background_color": "rgba(0,0,0,0)",
         "card_background_color": "#ffffff",
         "title": "Nail Care Packages",
         "intro": ""
