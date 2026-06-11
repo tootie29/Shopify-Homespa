@@ -14,7 +14,7 @@
       "name": "Page hero",
       "settings": {
         "section_id": "",
-        "background_image": "shopify://shop_images/281c2094f923b24c3c14a1e01985efbc7214c5d0.jpg",
+        "background_image": "shopify://shop_images/281c2094f923b24c3c14a1e01985efbc7214c5d0_430x_3e57a0c8-32fa-4dc1-8645-1428c559bc14.webp",
         "title": ""
       }
     },
@@ -27,7 +27,7 @@
         "image_position": "right",
         "title": "About HomeSpa2Go",
         "richtext": "<p>HomeSpa2Go brings professional wellness treatments directly to your doorstep. We transform your home into a private sanctuary—where relaxation, healing, and balance come naturally.</p><p>Our approach blends traditional techniques like <strong>Hilot</strong> with therapeutic massage methods including <strong>Swedish, Thai, Shiatsu, Lymphatic, Myofascial, and Sports therapy</strong>. Every session is personalized to support your body’s needs—whether for stress relief, recovery, detox, or total rejuvenation.</p><p>We believe self-care should be simple, accessible, and deeply restorative.</p><p><strong>Relax. Heal. Renew — at home.</strong></p>",
-        "image": "shopify://shop_images/about_img.jpg"
+        "image": "shopify://shop_images/about_img.webp"
       }
     },
     "video_block_zECpN8": {
@@ -37,8 +37,8 @@
         "section_id": "",
         "background_color": "#f5f5f5",
         "title": "Homespa2Go was created with a simple idea",
-        "richtext": "<p>luxury self-care should be easy, accessible, and available in the comfort of your own home. We understand how busy life can get, and how often relaxation is the first thing people sacrifice. That’s why we built a service that brings the spa experience directly to you—no travel, no waiting, just pure comfort.What started as a passion for wellness and quality service has grown into a trusted home spa experience offering professional massages and nail care treatments. Every session is delivered with care, attention to detail, and a commitment to helping clients feel their best.<br/><br/></p>",
-        "image": "shopify://shop_images/face-massage.png",
+        "richtext": "<p>luxury self-care should be easy, accessible, and available in the comfort of your own home. We understand how busy life can get, and how often relaxation is the first thing people sacrifice. That’s why we built a service that brings the spa experience directly to you—no travel, no waiting, just pure comfort.What started as a passion for wellness and quality service has grown into a trusted home spa experience offering professional massages and nail care treatments. Every session is delivered with care, attention to detail, and a commitment to helping clients feel their best.</p>",
+        "image": "shopify://shop_images/face-massage.webp",
         "video_embed": ""
       }
     },
@@ -51,7 +51,7 @@
         "image_position": "left",
         "title": "What makes Homespa2Go different is our focus on true in-home luxury with real convenience",
         "richtext": "<p>We don’t just offer massage or nail services—we recreate the spa experience wherever you are. From the way our therapists arrive fully prepared, to the calming setup and professional care, every detail is designed to feel seamless, personal, and high-end without the premium spa price tag.<br/><br/></p>",
-        "image": "shopify://shop_images/about_img_2.jpg"
+        "image": "shopify://shop_images/about_img_2.webp"
       }
     },
     "cta_section_rCDa8J": {
@@ -59,7 +59,7 @@
       "name": "CTA Section",
       "settings": {
         "section_id": "",
-        "image": "shopify://shop_images/massage.png",
+        "image": "shopify://shop_images/massage_1.webp",
         "title": "Ready to experience spa-level relaxation without leaving your home?",
         "description": "Homespa2Go brings professional massage and nail care directly to you—so you can unwind, recharge, and feel your best on your own schedule.\n<br>\nBook your session today and enjoy luxury made simple.",
         "button_text": "Schedule An Appointment",
